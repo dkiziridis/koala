@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="gr.teicm.koala.Model" table="images" schema="koala">
+        <id name="id" column="id"/>
+        <property name="userId" column="user_id"/>
+        <property name="imageName" column="image_name"/>
+        <property name="imgData" column="img_data"/>
+        <property name="height" column="height"/>
+        <property name="width" column="width"/>
+        <property name="mimeType" column="mime_type"/>
+        <property name="fileSize" column="file_size"/>
+        <property name="latitude" column="latitude"/>
+        <property name="longtitude" column="longtitude"/>
+        <property name="cameraBrand" column="camera_brand"/>
+        <property name="cameraModel" column="camera_model"/>
+        <property name="date" column="date"/>
+        <property name="megapixels" column="megapixels"/>
+        <property name="dpi" column="dpi"/>
+        <property name="shutterSpeed" column="shutter_speed"/>
+        <property name="flash" column="flash"/>
+        <property name="fNumber" column="f_number"/>
+    </class>
+</hibernate-mapping>
