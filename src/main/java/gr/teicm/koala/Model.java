@@ -1,6 +1,5 @@
 package gr.teicm.koala;
 
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Arrays;
