@@ -15,5 +15,12 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
+    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="8e7c26c4-e0b3-47b6-b885-d316857df033">
+      <imported>true</imported>
+      <configured-by-url>true</configured-by-url>
+      <remarks>$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml</remarks>
+      <jdbc-driver>org.gjt.mm.mysql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/koala?serverTimezone=Europe/Athens</jdbc-url>
+    </data-source>
   </component>
 </project>

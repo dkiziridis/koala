@@ -2,15 +2,18 @@ package gr.teicm.koala;
 
 import com.drew.imaging.ImageMetadataReader;
 import com.drew.metadata.Metadata;
-import org.apache.tika.exception.TikaException;
 
+import org.apache.tika.exception.TikaException;
 import org.apache.tika.mime.MediaType;
 import org.apache.tika.parser.AutoDetectParser;
 import org.apache.tika.parser.ParseContext;
 import org.apache.tika.parser.Parser;
 import org.apache.tika.sax.BodyContentHandler;
+
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
 import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
 
@@ -27,13 +30,13 @@ public class App
     public static void main(final String[] args) throws Exception
     {
 
-//        HibernateUtil hibernateUtil = new HibernateUtil();
-//        Session session = HibernateUtil.getSession();
-//        Transaction tx = session.beginTransaction();
+        HibernateUtil hibernateUtil = new HibernateUtil();
+        Session session = HibernateUtil.getSession();
+        Transaction tx = session.beginTransaction();
 
         //* Manual hibernate test
 
-        File img = new File("C:\\Users\\Crow\\Desktop\\test.jpg");
+//        File img = new File("C:\\Users\\Crow\\Desktop\\test.jpg");
 //        byte[] bFile = new byte[(int) img.length()];
 //
 //        try
@@ -70,21 +73,21 @@ public class App
 
         // tika test
 
-        Metadata metadata = ImageMetadataReader.readMetadata(new File("C:\\Users\\Crow\\Desktop\\test.jpg"));
+        //Metadata metadata = ImageMetadataReader.readMetadata(new File("C:\\Users\\Crow\\Desktop\\test.jpg"));
 
                //image.setHeight(metadata);
 
 
-//
 //        session.save(image);
 //        tx.commit();
-//
-//        session.close();
-//        hibernateUtil.shutdown();
 
-//        Model m = new Model();
-//        View v = new View("Koala Photo Album");
-//        koala.Controller c = new koala.Controller(m,v);
-//        c.initController();
+        session.close();
+        hibernateUtil.shutdown();
+
+
+        MainView v = new MainView("Koala Photo");
+        Model m = new Model();
+        Controller c = new Controller(m,v);
+        c.initController();
     }
 }

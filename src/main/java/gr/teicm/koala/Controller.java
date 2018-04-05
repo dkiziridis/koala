@@ -1,18 +1,17 @@
 package gr.teicm.koala;
 
 import javax.swing.*;
-
 import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
 
 public class Controller
 {
 
+
     ///////////////////////////////////DILOSI-MEAVLIWN///////////////////////////////////////////
     public Model model;
-    public View view;
-
+    public MainView view;
     //////////////////////////////////////////////////////////////////////////////////////////////////
-    public Controller(Model m, View v)
+    public Controller(Model m, MainView v)
     {
         model = m;
         view = v;
@@ -24,13 +23,13 @@ public class Controller
     //////////////////////////////////////INITIALAZATION////////////////////////////////////////////////
     public void initView()
     {
-        view.getImagePathTextfield().setText(model.getCameraModel());
-        view.getImagePathTextfield().setText(model.getCameraBrand());
+//        view.getImagePathTextfield().setText(model.getCameraModel());
+//        view.getImagePathTextfield().setText(model.getCameraBrand());
     }
 
     public void initController()
     {
-        view.getUploadButton().addActionListener(e -> saveFirstname());
+//        view.getUploadButton().addActionListener(e -> saveFirstname());
 
     }
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -41,8 +40,6 @@ public class Controller
 
         JOptionPane.showMessageDialog(null, "Image uploaded", "Info", INFORMATION_MESSAGE);
     }
-
-
 
 
 }

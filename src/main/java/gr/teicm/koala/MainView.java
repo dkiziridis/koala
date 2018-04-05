@@ -1,8 +1,6 @@
 package gr.teicm.koala;
 
-
 import java.awt.BorderLayout;
-
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -10,23 +8,20 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class View
+public class MainView
 {
     // view uses Swing framework to display UI to user
     private JFrame frame;
     private JLabel selectImageLabel; //select image
     private JLabel exifDataLabel; //upload image
     private JTextField imagePathTextfield; //image path
-
     private JButton uploadButton; //upload button
-
-
     /**
      * View Constructor
      *
      * @param title title used for the frame
      */
-    public View(String title)
+    public MainView(String title)
     {
         // Create the principal frame
         frame = new JFrame(title);
@@ -40,10 +35,7 @@ public class View
         selectImageLabel = new JLabel("Select Image: ");
         exifDataLabel = new JLabel("EXIF :  ");
         imagePathTextfield = new JTextField();
-
         uploadButton = new JButton("Upload");
-
-
 
         // Add UI element to frame
         GroupLayout layout = new GroupLayout(frame.getContentPane());
@@ -110,10 +102,6 @@ public class View
         this.imagePathTextfield = imagePathTextfield;
     }
 
-
-
-
-
     public JButton getUploadButton()
     {
         return uploadButton;
@@ -123,10 +111,5 @@ public class View
     {
         this.uploadButton = uploadButton;
     }
-
-
-
-
-
 
 }
