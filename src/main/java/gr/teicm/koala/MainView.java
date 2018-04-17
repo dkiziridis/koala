@@ -1,21 +1,12 @@
 package gr.teicm.koala;
 
 import java.awt.BorderLayout;
-import javax.swing.GroupLayout;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-
-public class MainView
+import javax.swing.*;
+import gr.teicm.koala.ToolbarView;
+public class MainView extends JFrame
 {
     // view uses Swing framework to display UI to user
-    private JFrame frame;
-    private JLabel selectImageLabel; //select image
-    private JLabel exifDataLabel; //upload image
-    private JTextField imagePathTextfield; //image path
-    private JButton uploadButton; //upload button
+
     /**
      * View Constructor
      *
@@ -24,20 +15,28 @@ public class MainView
     public MainView(String title)
     {
         // Create the principal frame
-        frame = new JFrame(title);
-        frame.getContentPane().setLayout(new BorderLayout());
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500, 200);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        this.setTitle(title);
+        this.getContentPane().setLayout(new BorderLayout());
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setSize(500, 200);
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
+        initComponents();
+
+
+    }
+
+    public void initComponents()
+    {
 
         // Create UI elements
         selectImageLabel = new JLabel("Select Image: ");
         exifDataLabel = new JLabel("EXIF :  ");
         imagePathTextfield = new JTextField();
         uploadButton = new JButton("Upload");
-
+        mainPanel = new JPanel();
         // Add UI element to frame
+
         GroupLayout layout = new GroupLayout(frame.getContentPane());
         layout.setAutoCreateGaps(true);
         layout.setHorizontalGroup(layout.createSequentialGroup()
@@ -59,12 +58,7 @@ public class MainView
         );
 
         layout.linkSize(SwingConstants.HORIZONTAL, uploadButton);
-        frame.getContentPane().setLayout(layout);
-    }
-
-    public JFrame getFrame()
-    {
-        return frame;
+        this.getContentPane().setLayout(layout);
     }
 
     public void setFrame(JFrame frame)
