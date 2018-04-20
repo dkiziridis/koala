@@ -1,18 +1,38 @@
 package gr.teicm.koala;
 
+import java.awt.FlowLayout;
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class ToolbarView extends JPanel implements ActionListener
+public class ToolbarView extends JPanel
 {
+    public JButton openImgBtn;
+    public JButton uploadBtn;
+    public JButton exifDataBtn;
+    public JButton clearImg;
+    public JButton geolocateBtn;
 
-    private final JButton openImgBtn;
-    private final JButton uploadBtn;
-
-    @Override
-    public void actionPerformed(ActionEvent e)
+    ToolbarView()
     {
+        setBorder(BorderFactory.createEtchedBorder());
+        setLayout(new FlowLayout(FlowLayout.CENTER));
+        openImgBtn = new JButton("Open");
+        uploadBtn = new JButton("Upload");
+        exifDataBtn = new JButton("EXIF");
+        clearImg = new JButton("Clear");
+        geolocateBtn = new JButton("Geolocate");
+
+        openImgBtn.setName("openImgBtn");
+        uploadBtn.setName("uploadBtn");
+        exifDataBtn.setName("exifDataBtn");
+        clearImg.setName("clearImg");
+        geolocateBtn.setName("geolocateBtn");
+
+        add(openImgBtn);
+        add(uploadBtn);
+        add(exifDataBtn);
+        add(clearImg);
+        add(geolocateBtn);
 
     }
+
 }
