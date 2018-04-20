@@ -23,7 +23,6 @@ import java.util.ListIterator;
 public class Controller extends JFrame implements ActionListener
 {
 
-    private HibernateModel hibernateImage;
     private GalleryView galleryView;
     private ToolbarView toolbarView;
     private ExifView exifView;
@@ -175,7 +174,6 @@ public class Controller extends JFrame implements ActionListener
         toolbarView = new ToolbarView();
         galleryView = new GalleryView();
         exifView = new ExifView();
-        hibernateImage = new HibernateModel();
 
 
         add(toolbarView, BorderLayout.SOUTH);
@@ -200,20 +198,17 @@ public class Controller extends JFrame implements ActionListener
     }
 
 
-
     private ImageIcon retrieveImage(int imageId)
     {
 
-        HibernateUtil hibernateUtil = new HibernateUtil();
         Session session = HibernateUtil.getSession();
-        Transaction tx = session.beginTransaction();
 
-        HibernateModel image = (HibernateModel) session.get(HibernateModel.class,imageId); // It will get data of which have imageId=1
-        byte[] getImageInBytes = image.getImgData();  // image convert in byte form
+        HibernateModel image = session.get(HibernateModel.class, imageId); //  get data according to imageId
+        byte[] getImageInBytes = image.getImgData();  // convert to byte
 
-        ImageIcon imageFile = new ImageIcon(image.getImageName()); // we can put any name of file (just name of new file created).
+        ImageIcon imageFile = new ImageIcon(image.getImageName()); // set name
 
-        FileOutputStream outputStream = null; // it will create new file (same location of class)
+        FileOutputStream outputStream = null;
         try
         {
             outputStream = new FileOutputStream(String.valueOf(imageFile));
@@ -223,7 +218,7 @@ public class Controller extends JFrame implements ActionListener
         }
         try
         {
-            outputStream.write(getImageInBytes); // image write in "myImage.jpg" file
+            outputStream.write(getImageInBytes);
         } catch (IOException e)
         {
             e.printStackTrace();
@@ -258,8 +253,6 @@ public class Controller extends JFrame implements ActionListener
     {
         if (e.getSource().equals(toolbarView.openImgBtn))
         {
-
-
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
             fileChooser.setDialogTitle("Select Image");
@@ -274,7 +267,7 @@ public class Controller extends JFrame implements ActionListener
                 ImageIcon MyImage = new ImageIcon(path); //TODO better
 
                 galleryView.insertImage(ResizeImage(MyImage));
-                currentPath = path; // WTF ?
+                currentPath = path; // Temporary variable
             } else if (result == JFileChooser.CANCEL_OPTION)
             {
                 System.out.println("No Data");
@@ -294,7 +287,8 @@ public class Controller extends JFrame implements ActionListener
             new ImageIcon();
             ImageIcon test;
             test = retrieveImage(6);
-            galleryView.insertImage(ResizeImage(test)); //TODO initial testing
+            galleryView.insertImage(test); //TODO initial testing, doesn't show photo if resized using ResizeImage
+//            galleryView.insertImage(ResizeImage(test));
         }
 
     }

@@ -11,10 +11,5 @@
       <user-name>root</user-name>
       <introspection-schemas>*:koala</introspection-schemas>
     </data-source>
-    <data-source name="hibernate.cfg.xml/Hibernate" uuid="8e7c26c4-e0b3-47b6-b885-d316857df033">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
-      <first-sync>true</first-sync>
-      <user-name>root</user-name>
-    </data-source>
   </component>
 </project>
