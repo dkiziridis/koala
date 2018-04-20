@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Arrays;
 
 @Entity
-@Table(name = "images", schema = "koala") //catalog = "")
+@Table(name = "images", schema = "koala") //catalog = "") <-- ??
 public class HibernateModel
 {
     private int id;
@@ -136,7 +136,7 @@ public class HibernateModel
     }
 
     @Basic
-    @Column(name = "longtitude")
+    @Column(name = "longitude")
     public Double getLongitude()
     {
         return longitude;

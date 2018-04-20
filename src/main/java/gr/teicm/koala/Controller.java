@@ -1,16 +1,12 @@
 package gr.teicm.koala;
 
-
 import org.hibernate.Session;
-import org.hibernate.Transaction;
-
 import javax.swing.*;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
-
 import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -22,7 +18,6 @@ import java.util.ListIterator;
 
 public class Controller extends JFrame implements ActionListener
 {
-
     private GalleryView galleryView;
     private ToolbarView toolbarView;
     private ExifView exifView;
@@ -197,7 +192,6 @@ public class Controller extends JFrame implements ActionListener
 
     }
 
-
     private ImageIcon retrieveImage(int imageId)
     {
 
@@ -238,8 +232,7 @@ public class Controller extends JFrame implements ActionListener
 
     }
 
-
-    public ImageIcon ResizeImage(ImageIcon img)
+    public ImageIcon resizeImage(ImageIcon img)
     {
         ImageIcon MyImage = new ImageIcon(String.valueOf(img));
         Image imgTemp = MyImage.getImage();
@@ -265,8 +258,7 @@ public class Controller extends JFrame implements ActionListener
                 File selectedFile = fileChooser.getSelectedFile();
                 String path = selectedFile.getAbsolutePath();
                 ImageIcon MyImage = new ImageIcon(path); //TODO better
-
-                galleryView.insertImage(ResizeImage(MyImage));
+                galleryView.insertImage(resizeImage(MyImage));
                 currentPath = path; // Temporary variable
             } else if (result == JFileChooser.CANCEL_OPTION)
             {
@@ -285,8 +277,7 @@ public class Controller extends JFrame implements ActionListener
         } else if (e.getSource().equals(toolbarView.testBtn))
         {
             ImageIcon test = retrieveImage(6);
-            galleryView.insertImage(test); //TODO initial testing, doesn't show photo if resized using ResizeImage
-//            galleryView.insertImage(ResizeImage(test));
+            galleryView.insertImage(test); //TODO initial testing, doesn't show photo if resized using resizeImage
         }
 
     }
