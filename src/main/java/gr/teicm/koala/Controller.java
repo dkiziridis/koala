@@ -19,11 +19,6 @@ public class Controller extends JFrame implements ActionListener
     private ExifView exifView;
     private String currentPath;
 
-    Controller(Model model, View View)
-    {
-
-
-    }
 
     Controller()
     {
@@ -89,6 +84,7 @@ public class Controller extends JFrame implements ActionListener
         } else if (e.getSource().equals(toolbarView.exifDataBtn))
         {
             exifView.setTitle("EXIF Data");
+            exifView.setLocationRelativeTo(null);
             exifView.setSize(400, 700);
             exifView.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
             exifView.setVisible(true);

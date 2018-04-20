@@ -1,11 +1,6 @@
 package gr.teicm.koala;
 
 
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-
-import javax.swing.*;
-
 public class App
 {
     public static void main(final String[] args) throws Exception
@@ -18,7 +13,7 @@ public class App
         //* Manual hibernate test
 
 
-//        Model image = new Model();
+//        HibernateModel image = new HibernateModel();
 
 
 //        image.setId(2);
@@ -52,9 +47,6 @@ public class App
 //        session.close();
 //        hibernateUtil.shutdown();
 
-
-        View v = new View("Koala Photo");
-        Model m = new Model();
         Controller c = new Controller();
 
     }
