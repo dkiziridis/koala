@@ -27,7 +27,7 @@ public class Controller extends JFrame implements ActionListener
     private ToolbarView toolbarView;
     private ExifView exifView;
     private String currentPath;
-    private List<ImageIcon> bufferedImages = new List<ImageIcon>()
+    private List<ImageIcon> bufferedImages = new List<ImageIcon>() //TODO
     {
         @Override
         public int size()
@@ -284,9 +284,7 @@ public class Controller extends JFrame implements ActionListener
             exifView.setVisible(true);
         } else if (e.getSource().equals(toolbarView.testBtn))
         {
-            new ImageIcon();
-            ImageIcon test;
-            test = retrieveImage(6);
+            ImageIcon test = retrieveImage(6);
             galleryView.insertImage(test); //TODO initial testing, doesn't show photo if resized using ResizeImage
 //            galleryView.insertImage(ResizeImage(test));
         }
