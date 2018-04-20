@@ -23,4 +23,5 @@ class GalleryView extends JPanel
     {
         image.setIcon(null);
     }
+
 }

@@ -12,7 +12,7 @@ public class ExifView extends JFrame
     private JLabel mimeType;
     private JLabel fileSize;
     private JLabel latitude;
-    private JLabel longtitude;
+    private JLabel longitude;
     private JLabel cameraBrand;
     private JLabel cameraModel;
     private JLabel date;
@@ -30,7 +30,7 @@ public class ExifView extends JFrame
         mimeType = new JLabel("Type : ");
         fileSize = new JLabel("Size : ");
         latitude = new JLabel("Latitude : ");
-        longtitude = new JLabel("Longtitude : ");
+        longitude = new JLabel("Longitude : ");
         cameraBrand = new JLabel("Camera Brand : ");
         cameraModel = new JLabel("Camera HibernateModel : ");
         date = new JLabel("Date : ");
@@ -45,7 +45,7 @@ public class ExifView extends JFrame
         add(mimeType);
         add(fileSize);
         add(latitude);
-        add(longtitude);
+        add(longitude);
         add(cameraBrand);
         add(cameraModel);
         add(date);
@@ -124,14 +124,14 @@ public class ExifView extends JFrame
         this.latitude = latitude;
     }
 
-    public JLabel getLongtitude()
+    public JLabel getLongitude()
     {
-        return longtitude;
+        return longitude;
     }
 
-    public void setLongtitude(JLabel longtitude)
+    public void setLongitude(JLabel longitude)
     {
-        this.longtitude = longtitude;
+        this.longitude = longitude;
     }
 
     public JLabel getCameraBrand()

@@ -17,7 +17,7 @@ public class HibernateModel
     private String mimeType;
     private Integer fileSize;
     private Double latitude;
-    private Double longtitude;
+    private Double longitude;
     private String cameraBrand;
     private String cameraModel;
     private Timestamp date;
@@ -137,14 +137,14 @@ public class HibernateModel
 
     @Basic
     @Column(name = "longtitude")
-    public Double getLongtitude()
+    public Double getLongitude()
     {
-        return longtitude;
+        return longitude;
     }
 
-    public void setLongtitude(Double longtitude)
+    public void setLongitude(Double longtitude)
     {
-        this.longtitude = longtitude;
+        this.longitude = longtitude;
     }
 
     @Basic
@@ -260,7 +260,7 @@ public class HibernateModel
         if (mimeType != null ? !mimeType.equals(hibernateModel.mimeType) : hibernateModel.mimeType != null) return false;
         if (fileSize != null ? !fileSize.equals(hibernateModel.fileSize) : hibernateModel.fileSize != null) return false;
         if (latitude != null ? !latitude.equals(hibernateModel.latitude) : hibernateModel.latitude != null) return false;
-        if (longtitude != null ? !longtitude.equals(hibernateModel.longtitude) : hibernateModel.longtitude != null) return false;
+        if (longitude != null ? !longitude.equals(hibernateModel.longitude) : hibernateModel.longitude != null) return false;
         if (cameraBrand != null ? !cameraBrand.equals(hibernateModel.cameraBrand) : hibernateModel.cameraBrand != null) return false;
         if (cameraModel != null ? !cameraModel.equals(hibernateModel.cameraModel) : hibernateModel.cameraModel != null) return false;
         if (date != null ? !date.equals(hibernateModel.date) : hibernateModel.date != null) return false;
@@ -285,7 +285,7 @@ public class HibernateModel
         result = 31 * result + (mimeType != null ? mimeType.hashCode() : 0);
         result = 31 * result + (fileSize != null ? fileSize.hashCode() : 0);
         result = 31 * result + (latitude != null ? latitude.hashCode() : 0);
-        result = 31 * result + (longtitude != null ? longtitude.hashCode() : 0);
+        result = 31 * result + (longitude != null ? longitude.hashCode() : 0);
         result = 31 * result + (cameraBrand != null ? cameraBrand.hashCode() : 0);
         result = 31 * result + (cameraModel != null ? cameraModel.hashCode() : 0);
         result = 31 * result + (date != null ? date.hashCode() : 0);

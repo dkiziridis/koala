@@ -14,7 +14,7 @@
         <property name="mimeType" column="mime_type"/>
         <property name="fileSize" column="file_size"/>
         <property name="latitude" column="latitude"/>
-        <property name="longtitude" column="longtitude"/>
+        <property name="longitude" column="longitude"/>
         <property name="cameraBrand" column="camera_brand"/>
         <property name="cameraModel" column="camera_model"/>
         <property name="date" column="date"/>
