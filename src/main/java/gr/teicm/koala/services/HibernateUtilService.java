@@ -1,11 +1,11 @@
-package gr.teicm.koala;
+package gr.teicm.koala.services;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class HibernateUtil
+public class HibernateUtilService
 {
 
     private static final SessionFactory sessionFactory;

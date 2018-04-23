@@ -1,13 +1,13 @@
-package gr.teicm.koala;
+package gr.teicm.koala.views;
 
 import java.awt.BorderLayout;
 import javax.swing.*;
 
-class GalleryView extends JPanel
+public class GalleryView extends JPanel
 {
     public JLabel image;
 
-    GalleryView()
+    public GalleryView()
     {
         image = new JLabel();
         setLayout(new BorderLayout());

@@ -1,4 +1,4 @@
-package gr.teicm.koala;
+package gr.teicm.koala.views;
 
 import javax.swing.*;
 

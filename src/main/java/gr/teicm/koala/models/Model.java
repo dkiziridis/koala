@@ -1,4 +1,4 @@
-package gr.teicm.koala;
+package gr.teicm.koala.models;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 @Entity
 @Table(name = "images", schema = "koala") //catalog = "") <-- ??
-public class HibernateModel
+public class Model
 {
     private int id;
     private String userId;
@@ -249,26 +249,26 @@ public class HibernateModel
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        HibernateModel hibernateModel = (HibernateModel) o;
+        Model model = (Model) o;
 
-        if (id != hibernateModel.id) return false;
-        if (height != hibernateModel.height) return false;
-        if (userId != null ? !userId.equals(hibernateModel.userId) : hibernateModel.userId != null) return false;
-        if (imageName != null ? !imageName.equals(hibernateModel.imageName) : hibernateModel.imageName != null) return false;
-        if (!Arrays.equals(imgData, hibernateModel.imgData)) return false;
-        if (width != null ? !width.equals(hibernateModel.width) : hibernateModel.width != null) return false;
-        if (mimeType != null ? !mimeType.equals(hibernateModel.mimeType) : hibernateModel.mimeType != null) return false;
-        if (fileSize != null ? !fileSize.equals(hibernateModel.fileSize) : hibernateModel.fileSize != null) return false;
-        if (latitude != null ? !latitude.equals(hibernateModel.latitude) : hibernateModel.latitude != null) return false;
-        if (longitude != null ? !longitude.equals(hibernateModel.longitude) : hibernateModel.longitude != null) return false;
-        if (cameraBrand != null ? !cameraBrand.equals(hibernateModel.cameraBrand) : hibernateModel.cameraBrand != null) return false;
-        if (cameraModel != null ? !cameraModel.equals(hibernateModel.cameraModel) : hibernateModel.cameraModel != null) return false;
-        if (date != null ? !date.equals(hibernateModel.date) : hibernateModel.date != null) return false;
-        if (megapixels != null ? !megapixels.equals(hibernateModel.megapixels) : hibernateModel.megapixels != null) return false;
-        if (dpi != null ? !dpi.equals(hibernateModel.dpi) : hibernateModel.dpi != null) return false;
-        if (shutterSpeed != null ? !shutterSpeed.equals(hibernateModel.shutterSpeed) : hibernateModel.shutterSpeed != null) return false;
-        if (flash != null ? !flash.equals(hibernateModel.flash) : hibernateModel.flash != null) return false;
-        if (fNumber != null ? !fNumber.equals(hibernateModel.fNumber) : hibernateModel.fNumber != null) return false;
+        if (id != model.id) return false;
+        if (height != model.height) return false;
+        if (userId != null ? !userId.equals(model.userId) : model.userId != null) return false;
+        if (imageName != null ? !imageName.equals(model.imageName) : model.imageName != null) return false;
+        if (!Arrays.equals(imgData, model.imgData)) return false;
+        if (width != null ? !width.equals(model.width) : model.width != null) return false;
+        if (mimeType != null ? !mimeType.equals(model.mimeType) : model.mimeType != null) return false;
+        if (fileSize != null ? !fileSize.equals(model.fileSize) : model.fileSize != null) return false;
+        if (latitude != null ? !latitude.equals(model.latitude) : model.latitude != null) return false;
+        if (longitude != null ? !longitude.equals(model.longitude) : model.longitude != null) return false;
+        if (cameraBrand != null ? !cameraBrand.equals(model.cameraBrand) : model.cameraBrand != null) return false;
+        if (cameraModel != null ? !cameraModel.equals(model.cameraModel) : model.cameraModel != null) return false;
+        if (date != null ? !date.equals(model.date) : model.date != null) return false;
+        if (megapixels != null ? !megapixels.equals(model.megapixels) : model.megapixels != null) return false;
+        if (dpi != null ? !dpi.equals(model.dpi) : model.dpi != null) return false;
+        if (shutterSpeed != null ? !shutterSpeed.equals(model.shutterSpeed) : model.shutterSpeed != null) return false;
+        if (flash != null ? !flash.equals(model.flash) : model.flash != null) return false;
+        if (fNumber != null ? !fNumber.equals(model.fNumber) : model.fNumber != null) return false;
 
         return true;
     }

@@ -1,4 +1,4 @@
-package gr.teicm.koala;
+package gr.teicm.koala.views;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,9 +20,21 @@ public class ExifView extends JFrame
     private JLabel dpi;
     private GridLayout layout;
 
-    ExifView()
+    public ExifView()
+    {
+        initComponents();
+        setTitle("EXIF Data");
+        setLocationRelativeTo(null);
+        setSize(400, 700);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        setVisible(true);
+
+    }
+
+    private void initComponents()
     {
         layout = new GridLayout(7,2);
+
         userId = new JLabel("User ID : ");
         imageName = new JLabel("Name : ");
         imageHeight = new JLabel("Height : ");
@@ -52,7 +64,6 @@ public class ExifView extends JFrame
         add(megapixels);
         add(dpi);
     }
-
 
     public JLabel getUserId()
     {

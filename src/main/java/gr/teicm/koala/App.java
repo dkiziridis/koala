@@ -1,5 +1,7 @@
 package gr.teicm.koala;
 
+import gr.teicm.koala.controllers.Controller;
+
 import javax.swing.*;
 
 public class App
