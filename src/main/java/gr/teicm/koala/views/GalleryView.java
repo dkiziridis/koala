@@ -1,6 +1,6 @@
 package gr.teicm.koala.views;
 
-import java.awt.BorderLayout;
+import java.awt.*;
 import javax.swing.*;
 
 public class GalleryView extends JPanel
@@ -10,8 +10,9 @@ public class GalleryView extends JPanel
     public GalleryView()
     {
         image = new JLabel();
-        setLayout(new BorderLayout());
+        setLayout(new GridLayout());
         add(new JScrollPane(image), BorderLayout.CENTER);
+        add()
     }
 
     public void insertImage(ImageIcon imageIcon)

@@ -172,13 +172,6 @@ public class Controller extends JFrame
         toolbarView.setServiceListener(new IServiceListener()
         {
             @Override
-            public void resizeImage(ImageIcon img)
-            {
-
-
-            }
-
-            @Override
             public void fetchImageById(int imageId)
             {
                 FetchImageService fetchImageService = new FetchImageService();
@@ -203,7 +196,6 @@ public class Controller extends JFrame
             @Override
             public void openLocalImage()
             {
-
                 OpenLocalImageService openLocalImage = new OpenLocalImageService();
                 ImageIcon image = openLocalImage.openImage();
                 Image resizedImg = image.getImage().getScaledInstance(galleryView.image.getWidth(), galleryView.image.getHeight(), Image.SCALE_SMOOTH);
