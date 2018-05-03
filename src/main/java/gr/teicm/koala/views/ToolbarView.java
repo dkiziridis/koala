@@ -41,6 +41,7 @@ public class ToolbarView extends JPanel
             public void actionPerformed(ActionEvent e)
             {
                 serviceListener.clearImage();
+
             }
         });
 

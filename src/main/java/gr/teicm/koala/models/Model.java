@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Arrays;
 
 @Entity
-@Table(name = "images", schema = "koala") //catalog = "") <-- ??
+@Table(name = "images", schema = "koala") //catalog = "") //<-- ??
 public class Model
 {
     private int id;

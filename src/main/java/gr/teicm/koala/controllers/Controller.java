@@ -183,7 +183,9 @@ public class Controller extends JFrame
             {
                 FetchImageService fetchImageService = new FetchImageService();
                 ImageIcon image = fetchImageService.fetchImageById(imageId);
-                galleryView.insertImage(image);
+                Image resizedImg = image.getImage().getScaledInstance(galleryView.image.getWidth(), galleryView.image.getHeight(), Image.SCALE_SMOOTH);
+                ImageIcon img = new ImageIcon(resizedImg);
+                galleryView.insertImage(img);
             }
 
             @Override
@@ -203,10 +205,10 @@ public class Controller extends JFrame
             {
 
                 OpenLocalImageService openLocalImage = new OpenLocalImageService();
-                ImageIcon tempImg = openLocalImage.openImage();
-
-                resizeImage(tempImg);
-                galleryView.insertImage(openLocalImage.openImage());
+                ImageIcon image = openLocalImage.openImage();
+                Image resizedImg = image.getImage().getScaledInstance(galleryView.image.getWidth(), galleryView.image.getHeight(), Image.SCALE_SMOOTH);
+                ImageIcon img = new ImageIcon(resizedImg);
+                galleryView.insertImage(img);
             }
         });
 
