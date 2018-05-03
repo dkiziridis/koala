@@ -6,8 +6,11 @@ import gr.teicm.koala.services.OpenLocalImageService;
 import gr.teicm.koala.views.GalleryView;
 import gr.teicm.koala.views.ToolbarView;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -15,6 +18,7 @@ import java.util.ListIterator;
 
 public class Controller extends JFrame
 {
+
     private GalleryView galleryView;
     private ToolbarView toolbarView;
     //private FetchImageService services;
@@ -198,7 +202,7 @@ public class Controller extends JFrame
             {
                 OpenLocalImageService openLocalImage = new OpenLocalImageService();
                 ImageIcon image = openLocalImage.openImage();
-                Image resizedImg = image.getImage().getScaledInstance(galleryView.image.getWidth(), galleryView.image.getHeight(), Image.SCALE_SMOOTH);
+                Image resizedImg = image.getImage().getScaledInstance(galleryView.galleryPanel.getWidth(), galleryView.galleryPanel.getHeight(), Image.SCALE_SMOOTH);
                 ImageIcon img = new ImageIcon(resizedImg);
                 galleryView.insertImage(img);
             }
@@ -216,9 +220,13 @@ public class Controller extends JFrame
 
     }
 
-    public int initGalleryView() //TODO
+    public Image initGalleryView() throws IOException //TODO
     {
-        return 0;
+
+
+
+
+
     }
 
 

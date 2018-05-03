@@ -7,12 +7,25 @@ import java.awt.*;
 
 public class ResizeImageService
 {
-
-    public ImageIcon resizeImage(ImageIcon img, GalleryView galleryView)
+    private static final int SIZE = 128;
+    public ImageIcon resizeImage(Image image)
     {
-        Image imgTemp = img.getImage();
-        Image newImage = imgTemp.getScaledInstance(galleryView.image.getWidth(), galleryView.image.getHeight(), Image.SCALE_SMOOTH);
-        ImageIcon image = new ImageIcon(newImage);
-        return image;
+        Image original = image;
+        int w = original.getWidth(null);
+        int h = original.getHeight(null);
+        float scaleW = (float) SIZE / w;
+        float scaleH = (float) SIZE / h;
+        if (scaleW > scaleH)
+        {
+            w = -1;
+            h = (int) (h * scaleH);
+        } else
+        {
+            w = (int) (w * scaleW);
+            h = -1;
+        }
+        Image scaled = original.getScaledInstance(w, h, Image.SCALE_SMOOTH);
+        ImageIcon img = new ImageIcon(scaled);
+        return img;
     }
 }
