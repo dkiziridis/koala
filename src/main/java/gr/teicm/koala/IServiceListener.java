@@ -6,8 +6,12 @@ import java.io.IOException;
 public interface IServiceListener
 {
     void fetchImageById(int imageId);
+
     void clearImage();
-    void populatePanel() throws IOException;
+
+    void setThumbnail(JPanel thumbnail) throws IOException;
+
     void viewExifData();
+
     void openLocalImage();
 }

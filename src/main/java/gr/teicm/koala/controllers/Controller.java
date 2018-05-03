@@ -1,5 +1,6 @@
 package gr.teicm.koala.controllers;
 
+import gr.teicm.koala.IGalleryListener;
 import gr.teicm.koala.IServiceListener;
 import gr.teicm.koala.models.LocalImageCollection;
 import gr.teicm.koala.services.FetchImageService;
@@ -167,6 +168,7 @@ public class Controller extends JFrame
         }
     };
 
+
     public Controller()
     {
         setLayout(new BorderLayout());
@@ -195,28 +197,47 @@ public class Controller extends JFrame
             }
 
             @Override
-            public void populatePanel() throws IOException
+            public void setThumbnail(JPanel thumbnail) throws IOException
             {
                 LocalImageCollection collection;
                 collection = new LocalImageCollection();
                 collection.setImageList();
                 collection.getImageList();
                 int collectionSize = collection.imageList.size();
+                JPanel singleThumbnailPanel = new JPanel(new GridLayout())
+                {
 
-
+                    @Override
+                    public Dimension getPreferredSize()
+                    {
+                        return new Dimension(128, 128);
+                    }
+                };
                 for (int i = 0; i < collectionSize; i++)
                 {
                     ResizeImageService resizeImageService = new ResizeImageService();
-                    ImageIcon temp = resizeImageService.resizeImage(collection.getImageList().get(i));
-//                    ImageIcon temp = new ImageIcon(scaledImage);
-                    galleryView.populatePanel(temp);
+                    Image temp = resizeImageService.resizeImage(collection.getImageList().get(i));
+                    singleThumbnailPanel.add(new JLabel(new ImageIcon(temp)));
+                    singleThumbnailPanel.setBorder(BorderFactory.createLineBorder(Color.black));
                 }
 
-                for (int i = 0; i < 6 * 6; i++) {
-                    galleryView.galleryPanel.add();
+                for (int i = 0; i < 6 * 6; i++)
+                {
+                    galleryView.setThumbnail(singleThumbnailPanel);
                 }
+
+
+                galleryView.setGalleryListener(new IGalleryListener()
+                {
+                    @Override
+                    public void setThumbnail(JPanel thumbnail) throws IOException
+                    {
+
+                    }
+                });
 
             }
+
 
             @Override
             public void viewExifData()

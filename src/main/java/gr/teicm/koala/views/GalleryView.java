@@ -1,15 +1,17 @@
 package gr.teicm.koala.views;
 
 import gr.teicm.koala.IGalleryListener;
+import gr.teicm.koala.IServiceListener;
 
 import java.awt.*;
 import javax.swing.*;
 
-public class GalleryView extends JPanel
+public class GalleryView extends JPanel implements IGalleryListener
 {
     /*public JList<JLabel> imageCollection;*/
     public JLabel image = new JLabel();
     public JPanel galleryPanel = new JPanel();
+    private IGalleryListener listener;
 
 
     public GalleryView()
@@ -20,6 +22,7 @@ public class GalleryView extends JPanel
         //add(new JScrollPane(galleryPanel), BorderLayout.CENTER);
         add(galleryPanel);
         add(new JScrollPane(galleryPanel));
+
 
     }
 
@@ -35,18 +38,16 @@ public class GalleryView extends JPanel
         image.setIcon(null);
     }
 
-    public void populatePanel(ImageIcon scaled)
+    public void setThumbnail(JPanel thumbnail)
     {
         //image.setIcon(scaled);
-
-
-            galleryPanel.add(new JLabel(new ImageIcon(String.valueOf(scaled))));
-
-
-        galleryPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+        galleryPanel.add(thumbnail);
+        galleryPanel.setSize(4 * 128, 4 * 128);
     }
 
 
-
-
+    public void setGalleryListener(IGalleryListener galleryListener)
+    {
+        this.listener = galleryListener;
+    }
 }

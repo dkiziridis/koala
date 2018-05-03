@@ -45,7 +45,7 @@ public class ToolbarView extends JPanel
             {
                 try
                 {
-                    serviceListener.populatePanel();
+                    serviceListener.setThumbnail(new JPanel());
                 } catch (IOException e1)
                 {
                     e1.printStackTrace();

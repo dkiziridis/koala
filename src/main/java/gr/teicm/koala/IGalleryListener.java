@@ -1,8 +1,9 @@
 package gr.teicm.koala;
 
 import javax.swing.*;
+import java.io.IOException;
 
 public interface IGalleryListener
 {
-    void populatePanel(ImageIcon scaled);
+    void setThumbnail(JPanel thumbnail) throws IOException;
 }
