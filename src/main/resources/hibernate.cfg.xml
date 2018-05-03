@@ -10,7 +10,7 @@
         <property name="hibernate.connection.password"></property>
         <property name="hibernate.show_sql">true</property>
         <mapping resource="Model.hbm.xml"/>
-        <mapping class="gr.teicm.koala.models.Model"/>
+        <mapping class="gr.teicm.koala.models.HibernateImage"/>
 
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->

@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="gr.teicm.koala.models.Model" table="images" schema="koala">
+    <class name="gr.teicm.koala.models.HibernateImage" table="images" schema="koala">
         <id name="id" column="id"/>
         <property name="userId" column="user_id"/>
         <property name="imageName" column="image_name"/>

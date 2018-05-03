@@ -1,6 +1,6 @@
 package gr.teicm.koala.services;
 
-import gr.teicm.koala.models.Model;
+import gr.teicm.koala.models.HibernateImage;
 import org.hibernate.Session;
 
 import javax.swing.*;
@@ -12,7 +12,7 @@ public class FetchImageService
     {
         try (Session session = HibernateUtilService.getSession())
         {
-            Model image = session.get(Model.class, imageId);
+            HibernateImage image = session.get(HibernateImage.class, imageId);
             System.out.println("Retrieved Image from Database using Hibernate.");
             return new ImageIcon(image.getImgData());
         }

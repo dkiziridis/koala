@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 @Entity
 @Table(name = "images", schema = "koala") //catalog = "") //<-- ??
-public class Model
+public class HibernateImage
 {
     private int id;
     private String userId;
@@ -249,26 +249,26 @@ public class Model
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Model model = (Model) o;
+        HibernateImage hibernateImage = (HibernateImage) o;
 
-        if (id != model.id) return false;
-        if (height != model.height) return false;
-        if (userId != null ? !userId.equals(model.userId) : model.userId != null) return false;
-        if (imageName != null ? !imageName.equals(model.imageName) : model.imageName != null) return false;
-        if (!Arrays.equals(imgData, model.imgData)) return false;
-        if (width != null ? !width.equals(model.width) : model.width != null) return false;
-        if (mimeType != null ? !mimeType.equals(model.mimeType) : model.mimeType != null) return false;
-        if (fileSize != null ? !fileSize.equals(model.fileSize) : model.fileSize != null) return false;
-        if (latitude != null ? !latitude.equals(model.latitude) : model.latitude != null) return false;
-        if (longitude != null ? !longitude.equals(model.longitude) : model.longitude != null) return false;
-        if (cameraBrand != null ? !cameraBrand.equals(model.cameraBrand) : model.cameraBrand != null) return false;
-        if (cameraModel != null ? !cameraModel.equals(model.cameraModel) : model.cameraModel != null) return false;
-        if (date != null ? !date.equals(model.date) : model.date != null) return false;
-        if (megapixels != null ? !megapixels.equals(model.megapixels) : model.megapixels != null) return false;
-        if (dpi != null ? !dpi.equals(model.dpi) : model.dpi != null) return false;
-        if (shutterSpeed != null ? !shutterSpeed.equals(model.shutterSpeed) : model.shutterSpeed != null) return false;
-        if (flash != null ? !flash.equals(model.flash) : model.flash != null) return false;
-        if (fNumber != null ? !fNumber.equals(model.fNumber) : model.fNumber != null) return false;
+        if (id != hibernateImage.id) return false;
+        if (height != hibernateImage.height) return false;
+        if (userId != null ? !userId.equals(hibernateImage.userId) : hibernateImage.userId != null) return false;
+        if (imageName != null ? !imageName.equals(hibernateImage.imageName) : hibernateImage.imageName != null) return false;
+        if (!Arrays.equals(imgData, hibernateImage.imgData)) return false;
+        if (width != null ? !width.equals(hibernateImage.width) : hibernateImage.width != null) return false;
+        if (mimeType != null ? !mimeType.equals(hibernateImage.mimeType) : hibernateImage.mimeType != null) return false;
+        if (fileSize != null ? !fileSize.equals(hibernateImage.fileSize) : hibernateImage.fileSize != null) return false;
+        if (latitude != null ? !latitude.equals(hibernateImage.latitude) : hibernateImage.latitude != null) return false;
+        if (longitude != null ? !longitude.equals(hibernateImage.longitude) : hibernateImage.longitude != null) return false;
+        if (cameraBrand != null ? !cameraBrand.equals(hibernateImage.cameraBrand) : hibernateImage.cameraBrand != null) return false;
+        if (cameraModel != null ? !cameraModel.equals(hibernateImage.cameraModel) : hibernateImage.cameraModel != null) return false;
+        if (date != null ? !date.equals(hibernateImage.date) : hibernateImage.date != null) return false;
+        if (megapixels != null ? !megapixels.equals(hibernateImage.megapixels) : hibernateImage.megapixels != null) return false;
+        if (dpi != null ? !dpi.equals(hibernateImage.dpi) : hibernateImage.dpi != null) return false;
+        if (shutterSpeed != null ? !shutterSpeed.equals(hibernateImage.shutterSpeed) : hibernateImage.shutterSpeed != null) return false;
+        if (flash != null ? !flash.equals(hibernateImage.flash) : hibernateImage.flash != null) return false;
+        if (fNumber != null ? !fNumber.equals(hibernateImage.fNumber) : hibernateImage.fNumber != null) return false;
 
         return true;
     }

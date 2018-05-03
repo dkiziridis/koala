@@ -1,8 +1,10 @@
 package gr.teicm.koala.controllers;
 
 import gr.teicm.koala.IServiceListener;
+import gr.teicm.koala.models.LocalImageCollection;
 import gr.teicm.koala.services.FetchImageService;
 import gr.teicm.koala.services.OpenLocalImageService;
+import gr.teicm.koala.services.ResizeImageService;
 import gr.teicm.koala.views.GalleryView;
 import gr.teicm.koala.views.ToolbarView;
 
@@ -173,6 +175,7 @@ public class Controller extends JFrame
 //        exifView = new ExifView();
 //        services = new FetchImageService();
 
+
         toolbarView.setServiceListener(new IServiceListener()
         {
             @Override
@@ -192,6 +195,30 @@ public class Controller extends JFrame
             }
 
             @Override
+            public void populatePanel() throws IOException
+            {
+                LocalImageCollection collection;
+                collection = new LocalImageCollection();
+                collection.setImageList();
+                collection.getImageList();
+                int collectionSize = collection.imageList.size();
+
+
+                for (int i = 0; i < collectionSize; i++)
+                {
+                    ResizeImageService resizeImageService = new ResizeImageService();
+                    ImageIcon temp = resizeImageService.resizeImage(collection.getImageList().get(i));
+//                    ImageIcon temp = new ImageIcon(scaledImage);
+                    galleryView.populatePanel(temp);
+                }
+
+                for (int i = 0; i < 6 * 6; i++) {
+                    galleryView.galleryPanel.add();
+                }
+
+            }
+
+            @Override
             public void viewExifData()
             {
                 galleryView.clearImage();
@@ -208,6 +235,7 @@ public class Controller extends JFrame
             }
         });
 
+
         add(toolbarView, BorderLayout.SOUTH);
         add(galleryView, BorderLayout.CENTER);
 
@@ -219,16 +247,6 @@ public class Controller extends JFrame
         setVisible(true);
 
     }
-
-    public Image initGalleryView() throws IOException //TODO
-    {
-
-
-
-
-
-    }
-
 
 }
 

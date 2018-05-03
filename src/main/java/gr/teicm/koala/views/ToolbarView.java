@@ -8,6 +8,7 @@ import gr.teicm.koala.services.FetchImageService;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import javax.swing.*;
 
 public class ToolbarView extends JPanel
@@ -20,6 +21,7 @@ public class ToolbarView extends JPanel
     public JButton clearImg;
     public JButton geolocateBtn;
     public JButton fetchBtn;
+    public JButton scanFolder;
 
     private IServiceListener serviceListener;
 
@@ -27,6 +29,7 @@ public class ToolbarView extends JPanel
     {
         setBorder(BorderFactory.createEtchedBorder());
         setLayout(new FlowLayout(FlowLayout.CENTER));
+        scanFolder = new JButton("Scan");
         openImgBtn = new JButton("Open");
         uploadBtn = new JButton("Upload");
         exifDataBtn = new JButton("EXIF");
@@ -35,6 +38,20 @@ public class ToolbarView extends JPanel
         fetchBtn = new JButton("Fetch Image");
 
 
+        scanFolder.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                try
+                {
+                    serviceListener.populatePanel();
+                } catch (IOException e1)
+                {
+                    e1.printStackTrace();
+                }
+            }
+        });
         clearImg.addActionListener(new ActionListener()
         {
             @Override
@@ -64,6 +81,7 @@ public class ToolbarView extends JPanel
         });
 
 
+        scanFolder.setName("scanFolder");
         openImgBtn.setName("openImgBtn");
         uploadBtn.setName("uploadBtn");
         exifDataBtn.setName("exifDataBtn");
@@ -71,6 +89,7 @@ public class ToolbarView extends JPanel
         geolocateBtn.setName("geolocateBtn");
         fetchBtn.setName("fetchBtn");
 
+        add(scanFolder);
         add(openImgBtn);
         add(uploadBtn);
         add(exifDataBtn);

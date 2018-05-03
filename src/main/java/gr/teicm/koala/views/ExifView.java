@@ -44,7 +44,7 @@ public class ExifView extends JFrame
         latitude = new JLabel("Latitude : ");
         longitude = new JLabel("Longitude : ");
         cameraBrand = new JLabel("Camera Brand : ");
-        cameraModel = new JLabel("Camera Model : ");
+        cameraModel = new JLabel("Camera HibernateImage : ");
         date = new JLabel("Date : ");
         megapixels = new JLabel("Megapixels : ");
         dpi = new JLabel("DPI : ");
