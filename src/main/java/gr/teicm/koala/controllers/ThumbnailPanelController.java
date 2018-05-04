@@ -34,10 +34,11 @@ public class ThumbnailPanelController extends JPanel
 
     public void initializeThumbnailPanel() throws IOException
     {
-        for (int i = 0; i < collectionSize; i++)
+        ResizeImageService resizeImageService = new ResizeImageService();
+
+        for (ImageIcon imageIcon: collection.getImageList())
         {
-            ResizeImageService resizeImageService = new ResizeImageService();
-            Image temp = resizeImageService.resizeImage(collection.getImageList().get(i));
+            Image temp = resizeImageService.resizeImage(imageIcon);
             ImageIcon img = new ImageIcon(temp);
             thumbnailView = new ThumbnailView(img);
             thumbnailPanelView.insertThumbnail(thumbnailView);
