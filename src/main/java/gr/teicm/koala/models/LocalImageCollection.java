@@ -29,7 +29,6 @@ public class LocalImageCollection
             {
                 ImageIcon image = new ImageIcon(ImageIO.read(listOfFiles[i]));
                 this.imageList.add(count++, image);
-
             }
         }
     }

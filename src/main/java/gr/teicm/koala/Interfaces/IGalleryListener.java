@@ -1,4 +1,4 @@
-package gr.teicm.koala;
+package gr.teicm.koala.Interfaces;
 
 import javax.swing.*;
 import java.io.IOException;

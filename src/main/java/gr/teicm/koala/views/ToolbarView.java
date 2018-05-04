@@ -1,9 +1,6 @@
 package gr.teicm.koala.views;
 
-import gr.teicm.koala.IServiceListener;
-import gr.teicm.koala.controllers.Controller;
-import gr.teicm.koala.controllers.ToolBarViewController;
-import gr.teicm.koala.services.FetchImageService;
+import gr.teicm.koala.Interfaces.IServiceListener;
 
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -45,7 +42,7 @@ public class ToolbarView extends JPanel
             {
                 try
                 {
-                    serviceListener.setThumbnail(new JPanel());
+                    serviceListener.showThumbnails();
                 } catch (IOException e1)
                 {
                     e1.printStackTrace();

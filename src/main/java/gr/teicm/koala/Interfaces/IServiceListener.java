@@ -1,4 +1,4 @@
-package gr.teicm.koala;
+package gr.teicm.koala.Interfaces;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -9,7 +9,7 @@ public interface IServiceListener
 
     void clearImage();
 
-    void setThumbnail(JPanel thumbnail) throws IOException;
+    void showThumbnails() throws IOException;
 
     void viewExifData();
 
