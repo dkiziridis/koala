@@ -8,10 +8,6 @@ import gr.teicm.koala.views.ToolbarView;
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
 
 public class Controller extends JFrame
 {
@@ -22,7 +18,6 @@ public class Controller extends JFrame
     //private FetchImageService services;
     //private ExifView exifView;
     private String currentPath;
-
 
 
     public Controller() throws IOException
@@ -56,7 +51,7 @@ public class Controller extends JFrame
             public void showThumbnails() throws IOException
             {
 
-                thumbnailPanelController = new ThumbnailPanelController();
+               // thumbnailPanelController = new ThumbnailPanelController(); //This will update thumbnails
             }
 
 

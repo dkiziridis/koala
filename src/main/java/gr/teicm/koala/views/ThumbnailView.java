@@ -1,10 +1,8 @@
 package gr.teicm.koala.views;
 
-import gr.teicm.koala.services.ResizeImageService;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
 
 public class ThumbnailView extends JPanel
 {

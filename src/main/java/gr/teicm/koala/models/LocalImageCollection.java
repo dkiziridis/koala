@@ -22,7 +22,7 @@ public class LocalImageCollection
     public void setImageList() throws IOException
     {
         int count = 0;
-        for (int i = 0; i < listOfFiles.length; i++)
+        for (int i = 0; i < listOfFiles.length; i++) //TODO change for
         {
             String name = listOfFiles[i].toString();
             if (name.endsWith("jpg") || name.endsWith("bmp") || name.endsWith("png") || name.endsWith("jpeg") || name.endsWith("gif") || name.endsWith("JPG"))

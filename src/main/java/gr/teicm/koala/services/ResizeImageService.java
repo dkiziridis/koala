@@ -19,8 +19,6 @@ public class ResizeImageService
                 .size(200, 200)
                 .asBufferedImage();
 
-        //ImageIcon scaled = new ImageIcon(thumbnail);
-
         return thumbnail;
     }
 }

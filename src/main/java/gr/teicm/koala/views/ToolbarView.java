@@ -2,15 +2,12 @@ package gr.teicm.koala.views;
 
 import gr.teicm.koala.Interfaces.IServiceListener;
 
-import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.IOException;
 import javax.swing.*;
+import java.awt.*;
+import java.io.IOException;
 
 public class ToolbarView extends JPanel
 {
-//    Controller controller = new Controller();
 
     public JButton openImgBtn;
     public JButton uploadBtn;
@@ -35,47 +32,21 @@ public class ToolbarView extends JPanel
         fetchBtn = new JButton("Fetch Image");
 
 
-        scanFolder.addActionListener(new ActionListener()
+        scanFolder.addActionListener(e ->
         {
-            @Override
-            public void actionPerformed(ActionEvent e)
+            try
             {
-                try
-                {
-                    serviceListener.showThumbnails();
-                } catch (IOException e1)
-                {
-                    e1.printStackTrace();
-                }
+                serviceListener.showThumbnails();
+            } catch (IOException e1)
+            {
+                e1.printStackTrace();
             }
         });
-        clearImg.addActionListener(new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent e)
-            {
-                serviceListener.clearImage();
+        clearImg.addActionListener(e -> serviceListener.clearImage());
 
-            }
-        });
+        fetchBtn.addActionListener(e -> serviceListener.fetchImageById(6));
 
-        fetchBtn.addActionListener(new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent e)
-            {
-                serviceListener.fetchImageById(6);
-            }
-        });
-
-        openImgBtn.addActionListener(new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent e)
-            {
-                serviceListener.openLocalImage();
-            }
-        });
+        openImgBtn.addActionListener(e -> serviceListener.openLocalImage());
 
 
         scanFolder.setName("scanFolder");
