@@ -7,24 +7,31 @@ import gr.teicm.koala.views.ThumbnailView;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 
 public class ThumbnailPanelController extends JPanel
 {
-    public JLabel image = new JLabel();
-    public ThumbnailPanelView thumbnailPanelView = new ThumbnailPanelView();
+    public JLabel image;
+    public ThumbnailPanelView thumbnailPanelView;
     public ThumbnailView thumbnailView;
-    LocalImageCollection collection = new LocalImageCollection();
+    private JScrollPane scrollPane;
+    LocalImageCollection collection;
 
 
     public ThumbnailPanelController() throws IOException
     {
 
+
+        image = new JLabel();
+        thumbnailPanelView = new ThumbnailPanelView();
+        collection = new LocalImageCollection();
         collection.setImageList();
         collection.getImageList();
         setLayout(new BorderLayout());
-        add(thumbnailPanelView);
-        add(new JScrollPane(thumbnailPanelView));
+        scrollPane = new JScrollPane(thumbnailPanelView);
+        add(scrollPane);
         initializeThumbnailPanel();
 
     }
@@ -38,6 +45,21 @@ public class ThumbnailPanelController extends JPanel
             Image temp = resizeImageService.resizeImage(imageIcon);
             ImageIcon img = new ImageIcon(temp);
             thumbnailView = new ThumbnailView(img);
+            thumbnailView.imageThumbnail.addMouseListener(new MouseAdapter()
+            {
+                @Override
+                public void mouseClicked(MouseEvent e)
+                {
+                    super.mouseClicked(e);
+                    scrollPane.setVisible(false);
+                    ImageIcon temp = thumbnailView.imageThumbnail.getIcon();
+                    insertImage(temp);
+                    add(image);
+                    setVisible(true);
+
+
+                }
+            });
             thumbnailPanelView.insertThumbnail(thumbnailView);
         }
     }
@@ -49,6 +71,7 @@ public class ThumbnailPanelController extends JPanel
 
     public void clearImage()
     {
-        image.setIcon(null);
+        thumbnailPanelView.setVisible(false);
     }
+
 }
