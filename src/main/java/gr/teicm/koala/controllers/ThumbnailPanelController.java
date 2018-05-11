@@ -2,6 +2,7 @@ package gr.teicm.koala.controllers;
 
 import gr.teicm.koala.models.LocalImageCollection;
 import gr.teicm.koala.services.ResizeImageService;
+import gr.teicm.koala.views.SingleImageView;
 import gr.teicm.koala.views.ThumbnailPanelView;
 import gr.teicm.koala.views.ThumbnailView;
 
@@ -52,10 +53,9 @@ public class ThumbnailPanelController extends JPanel
                 {
                     super.mouseClicked(e);
                     scrollPane.setVisible(false);
-                    ImageIcon temp = thumbnailView.imageThumbnail.getIcon();
-                    insertImage(temp);
-                    add(image);
-                    setVisible(true);
+                    Icon temp = thumbnailView.imageThumbnail.getIcon();
+                    ImageIcon temp2 = new ImageIcon(String.valueOf(temp));
+                    //TODO
 
 
                 }
