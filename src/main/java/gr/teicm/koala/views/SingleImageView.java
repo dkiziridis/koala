@@ -6,13 +6,17 @@ import java.awt.*;
 public class SingleImageView extends JPanel
 {
     JLabel singleImage;
-    public SingleImageView(ImageIcon singleImage)
+    public SingleImageView(ImageIcon imageIcon)
     {
+        singleImage = new JLabel();
         setLayout(new BorderLayout());
+        singleImage.setIcon(imageIcon);
+        add(singleImage,BorderLayout.CENTER);
+
         setVisible(true);
-        this.singleImage.setIcon(singleImage);
-        add(this.singleImage,BorderLayout.CENTER);
         //TODO add more buttons
 
     }
+
+
 }

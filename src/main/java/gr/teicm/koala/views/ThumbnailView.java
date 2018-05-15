@@ -2,11 +2,9 @@ package gr.teicm.koala.views;
 
 
 import javax.swing.*;
-import javax.swing.event.MouseInputListener;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 public class ThumbnailView extends JPanel
 {
@@ -24,17 +22,18 @@ public class ThumbnailView extends JPanel
                 super.mouseEntered(e);
                 System.out.println("mouseEntered");
                 setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-                setBorder(BorderFactory.createBevelBorder(2));
+                setBorder(BorderFactory.createLineBorder(Color.gray, 4));
             }
 
-            @Override
-            public void mouseClicked(MouseEvent e)
-            {
-                super.mouseClicked(e);
-                System.out.println("mouseClicked");
+            /* @Override
+             public void mouseClicked(MouseEvent e)
+             {
+                 super.mouseClicked(e);
+                 System.out.println("mouseClicked, panel hidden");
 
-            }
 
+             }
+ */
             @Override
             public void mouseExited(MouseEvent e)
             {

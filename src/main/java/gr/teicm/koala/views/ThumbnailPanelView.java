@@ -9,12 +9,10 @@ public class ThumbnailPanelView extends JPanel
     private int gridHeight;
     private int gridWidth;
 
-    public void ThumbailPanelView(int height, int width)
+    public void ThumbailPanelView()
     {
-        this.gridHeight = height;
-        this.gridWidth = width;
 
-        setLayout(new GridLayout(height, width));
+        setLayout(new CardLayout());
         add(new JScrollPane(this));
 
 

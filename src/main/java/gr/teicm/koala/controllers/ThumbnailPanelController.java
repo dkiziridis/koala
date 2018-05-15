@@ -24,43 +24,33 @@ public class ThumbnailPanelController extends JPanel
     public ThumbnailPanelController() throws IOException
     {
 
-
-        image = new JLabel();
+        //image = new JLabel();
         thumbnailPanelView = new ThumbnailPanelView();
         collection = new LocalImageCollection();
         collection.setImageList();
         collection.getImageList();
-        setLayout(new BorderLayout());
+        setLayout(new CardLayout());
         scrollPane = new JScrollPane(thumbnailPanelView);
+
         add(scrollPane);
+
         initializeThumbnailPanel();
 
     }
 
-    public void initializeThumbnailPanel() throws IOException
+
+    private void initializeThumbnailPanel() throws IOException
     {
         ResizeImageService resizeImageService = new ResizeImageService();
 
         for (ImageIcon imageIcon : collection.getImageList())
         {
-            Image temp = resizeImageService.resizeImage(imageIcon);
+            Image temp = resizeImageService.resizeImage(imageIcon); //TODO redesign, put resizeImageService in ThumbnailView
             ImageIcon img = new ImageIcon(temp);
             thumbnailView = new ThumbnailView(img);
-            thumbnailView.imageThumbnail.addMouseListener(new MouseAdapter()
-            {
-                @Override
-                public void mouseClicked(MouseEvent e)
-                {
-                    super.mouseClicked(e);
-                    scrollPane.setVisible(false);
-                    Icon temp = thumbnailView.imageThumbnail.getIcon();
-                    ImageIcon temp2 = new ImageIcon(String.valueOf(temp));
-                    //TODO
-
-
-                }
-            });
             thumbnailPanelView.insertThumbnail(thumbnailView);
+
+
         }
     }
 
