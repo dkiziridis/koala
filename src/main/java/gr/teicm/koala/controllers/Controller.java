@@ -77,7 +77,7 @@ public class Controller extends JFrame
         add(thumbnailPanelController, BorderLayout.CENTER);
 
         setTitle("Koala Photo Album");
-        setSize(800, 600);
+        setSize(1000, 600);
         setLocationRelativeTo(null);
         setMinimumSize(new Dimension(800, 600));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

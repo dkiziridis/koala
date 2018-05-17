@@ -9,11 +9,12 @@ public class ThumbnailPanelView extends JPanel
     private int gridHeight;
     private int gridWidth;
 
-    public void ThumbailPanelView()
+
+    public void ThumbnailPanelView(ThumbnailView thumbnailView)
     {
 
-        setLayout(new CardLayout());
-        add(new JScrollPane(this));
+        setLayout(new GridLayout(0,4, 2,2));
+        add(thumbnailView);
 
 
     }
@@ -27,8 +28,8 @@ public class ThumbnailPanelView extends JPanel
         return gridWidth;
     }
 
-    public void insertThumbnail(ThumbnailView thumbnailView)
-    {
-        add(thumbnailView);
-    }
+//    public void insertThumbnail(ThumbnailView thumbnailView)
+//    {
+//        add(thumbnailView);
+//    }
 }
