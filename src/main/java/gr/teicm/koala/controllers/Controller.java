@@ -1,8 +1,7 @@
 package gr.teicm.koala.controllers;
 
 import gr.teicm.koala.Interfaces.IServiceListener;
-import gr.teicm.koala.services.FetchImageService;
-import gr.teicm.koala.services.OpenLocalImageService;
+import gr.teicm.koala.services.IOServices;
 import gr.teicm.koala.views.ToolbarView;
 
 import javax.swing.*;
@@ -14,61 +13,53 @@ public class Controller extends JFrame
 
     private ThumbnailPanelController thumbnailPanelController;
     private ToolbarView toolbarView;
-
-    //private FetchImageService services;
-    //private ExifView exifView;
-    private String currentPath;
-
-
     public Controller() throws IOException
     {
         setLayout(new BorderLayout());
         toolbarView = new ToolbarView();
         thumbnailPanelController = new ThumbnailPanelController();
-//        exifView = new ExifView();
-//        services = new FetchImageService();
-
 
         toolbarView.setServiceListener(new IServiceListener()
         {
             @Override
-            public void fetchImageById(int imageId)
+            public void showGallery()
             {
-                FetchImageService fetchImageService = new FetchImageService();
-                ImageIcon image = fetchImageService.fetchImageById(imageId);
-                Image resizedImg = image.getImage().getScaledInstance(thumbnailPanelController.image.getWidth(), thumbnailPanelController.image.getHeight(), Image.SCALE_SMOOTH);
-                ImageIcon img = new ImageIcon(resizedImg);
-                thumbnailPanelController.insertImage(img);
+                thumbnailPanelController.showGallery();
             }
 
             @Override
-            public void clearImage()
+            public void nextImage()
             {
-                thumbnailPanelController.clearImage();
+                thumbnailPanelController.nextImage();
             }
 
             @Override
-            public void showThumbnails() throws IOException
+            public void previousImage()
             {
-
-               // thumbnailPanelController = new ThumbnailPanelController(); //This will update thumbnails
+                thumbnailPanelController.previousImage();
             }
 
 
             @Override
             public void viewExifData()
             {
-                thumbnailPanelController.clearImage();
+
             }
 
             @Override
-            public void openLocalImage()
+            public void setPath()
             {
-                OpenLocalImageService openLocalImage = new OpenLocalImageService();
-                ImageIcon image = openLocalImage.openImage();
-                Image resizedImg = image.getImage().getScaledInstance(thumbnailPanelController.thumbnailPanelView.getWidth(), thumbnailPanelController.thumbnailPanelView.getHeight(), Image.SCALE_SMOOTH);
-                ImageIcon img = new ImageIcon(resizedImg);
-                thumbnailPanelController.insertImage(img);
+//                IOServices openLocalImage = new IOServices();
+                IOServices IOServices = new IOServices();
+                IOServices.setPath();
+
+//                ImageIcon image = openLocalImage.openImage();
+//                Image resizedImg = image.getImage()
+//                        .getScaledInstance(thumbnailPanelController.thumbnailPanelView
+//                                .getWidth(), thumbnailPanelController.thumbnailPanelView
+//                                .getHeight(), Image.SCALE_SMOOTH);
+//                ImageIcon img = new ImageIcon(resizedImg);
+////                thumbnailPanelController.nextImage(img);
             }
         });
 

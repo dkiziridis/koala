@@ -10,7 +10,7 @@ import java.io.IOException;
 public class ResizeImageService
 {
 
-    public Image resizeImage(ImageIcon image) throws IOException
+    public Image makeThumbnail(ImageIcon image) throws IOException
     {
         Image imageTemp = image.getImage();
         BufferedImage buffered = (BufferedImage) imageTemp;
@@ -20,5 +20,16 @@ public class ResizeImageService
                 .asBufferedImage();
 
         return thumbnail;
+    }
+
+    public ImageIcon resizeImage(ImageIcon image, int height, int width)
+    {
+
+        Toolkit toolkit =  Toolkit.getDefaultToolkit ();
+        Dimension dim = toolkit.getScreenSize();
+//        width = dim.getWidth();
+//        height = dim.getHeight();
+        //TODO
+        return image;
     }
 }

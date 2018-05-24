@@ -8,84 +8,91 @@ import gr.teicm.koala.views.ThumbnailView;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.util.Map;
 
 public class ThumbnailPanelController extends JPanel
 {
-    public JLabel image;
-    public ThumbnailPanelView thumbnailPanelView;
-    public ThumbnailView thumbnailView;
-    private JScrollPane thumbnailGallery;
+    private ThumbnailPanelView thumbnailPanelView;
     LocalImageCollection collection;
     private SingleImageView singleImageView;
-    CardLayout deck;
+    private CardLayout deck;
 
     public ThumbnailPanelController() throws IOException
     {
 
-        //image = new JLabel();
-
-
 
         thumbnailPanelView = new ThumbnailPanelView();
         collection = new LocalImageCollection();
-        collection.setImageList();
-        collection.getImageList();
+        collection.initImageList();
+        collection.getImageCollection();
         setLayout(new CardLayout());
-        thumbnailGallery = new JScrollPane(thumbnailPanelView);
-        add("gallery",thumbnailGallery);
+        JScrollPane thumbnailGallery = new JScrollPane(thumbnailPanelView);
+        add("gallery", thumbnailGallery);
         deck = (CardLayout)(getLayout());
-
-        initializeThumbnailPanel();
+        initSingleImageViews();
+        initThumbnailPanel();
 
     }
 
 
-    private void initializeThumbnailPanel() throws IOException
+    private void initThumbnailPanel() throws IOException
     {
         ResizeImageService resizeImageService = new ResizeImageService();
 
-        for (ImageIcon imageIcon : collection.getImageList())
+        for (Map.Entry<String, ImageIcon> pair : collection.getImageCollection().entrySet())
         {
 
-            Image temp = resizeImageService.resizeImage(imageIcon); //TODO redesign, put resizeImageService in ThumbnailView
-            thumbnailView = new ThumbnailView(new ImageIcon(temp));
+            Image temp = resizeImageService.makeThumbnail(pair.getValue()); //TODO redesign, put resizeImageService in ThumbnailView
+            ThumbnailView thumbnailView = new ThumbnailView(new ImageIcon(temp));
             thumbnailView.imageThumbnail.addMouseListener(new MouseAdapter()
             {
                 @Override
                 public void mouseClicked(MouseEvent e)
                 {
                     super.mouseClicked(e);
-                    System.out.println("image clicked : "+imageIcon.toString());
-                    singleImageView = new SingleImageView(imageIcon);
-                    showThumbnail(imageIcon.toString(),singleImageView); //Invokes function to add SingleImageView to deck
-
-
+                    System.out.println("image clicked : "+pair.getKey());
+                    showCard(pair.getKey());
                 }
             });
             thumbnailPanelView.ThumbnailPanelView(thumbnailView);
-
         }
     }
 
-    public void insertImage(ImageIcon imageIcon)
+    private void initSingleImageViews()
     {
-        image.setIcon(imageIcon);
+        for (Map.Entry<String, ImageIcon> pair : collection.getImageCollection().entrySet())
+        {
+            singleImageView = new SingleImageView(pair.getValue());
+            insertCardsToDeck(pair.getKey(),singleImageView);
+        }
     }
 
-    private void showThumbnail(String name, SingleImageView singleImageView)
+
+    private void insertCardsToDeck(String name, SingleImageView singleImageView)
     {
-        add(name,singleImageView); //Adds SingleImageView to deck
+        add(singleImageView,name);
+    }
+
+    public void nextImage()
+    {
+        deck.next(this);
+    }
+
+    private void showCard(String name)
+    {
         deck.show(this, name);
 
     }
-    public void clearImage()
+    public void previousImage()
     {
-        thumbnailPanelView.setVisible(false);
+        deck.previous(this);
     }
 
+    public void showGallery()
+    {
+        deck.show(this,"gallery");
+    }
 }

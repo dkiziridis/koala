@@ -5,13 +5,13 @@ import java.io.IOException;
 
 public interface IServiceListener
 {
-    void fetchImageById(int imageId);
+    void showGallery();
 
-    void clearImage();
+    void nextImage();
 
-    void showThumbnails() throws IOException;
+    void previousImage();
 
     void viewExifData();
 
-    void openLocalImage();
+    void setPath();
 }

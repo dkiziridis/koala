@@ -4,18 +4,17 @@ import gr.teicm.koala.Interfaces.IServiceListener;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
 
 public class ToolbarView extends JPanel
 {
 
-    public JButton openImgBtn;
-    public JButton uploadBtn;
+    public JButton setPath;
+    public JButton syncBtn;
     public JButton exifDataBtn;
-    public JButton clearImg;
+    public JButton nextImgBtn;
     public JButton geolocateBtn;
-    public JButton fetchBtn;
-    public JButton scanFolder;
+    public JButton galleryBtn;
+    public JButton previousImgBtn;
 
     private IServiceListener serviceListener;
 
@@ -23,47 +22,40 @@ public class ToolbarView extends JPanel
     {
         setBorder(BorderFactory.createEtchedBorder());
         setLayout(new FlowLayout(FlowLayout.CENTER));
-        scanFolder = new JButton("Scan");
-        openImgBtn = new JButton("Open");
-        uploadBtn = new JButton("Upload");
+        previousImgBtn = new JButton(" < ");
+        setPath = new JButton("Path");
+        syncBtn = new JButton("Sync");
         exifDataBtn = new JButton("EXIF");
-        clearImg = new JButton("Clear");
+        nextImgBtn = new JButton(" > ");
         geolocateBtn = new JButton("Geolocate");
-        fetchBtn = new JButton("Fetch Image");
+        galleryBtn = new JButton("Gallery");
 
 
-        scanFolder.addActionListener(e ->
-        {
-            try
-            {
-                serviceListener.showThumbnails();
-            } catch (IOException e1)
-            {
-                e1.printStackTrace();
-            }
-        });
-        clearImg.addActionListener(e -> serviceListener.clearImage());
+        previousImgBtn.addActionListener(e -> serviceListener.previousImage());
 
-        fetchBtn.addActionListener(e -> serviceListener.fetchImageById(6));
+        nextImgBtn.addActionListener(e -> serviceListener.nextImage());
 
-        openImgBtn.addActionListener(e -> serviceListener.openLocalImage());
+        galleryBtn.addActionListener(e -> serviceListener.showGallery());
+
+        setPath.addActionListener(e -> serviceListener.setPath());
 
 
-        scanFolder.setName("scanFolder");
-        openImgBtn.setName("openImgBtn");
-        uploadBtn.setName("uploadBtn");
+        previousImgBtn.setName("previousImgBtn");
+        setPath.setName("setPath");
+        syncBtn.setName("syncBtn");
         exifDataBtn.setName("exifDataBtn");
-        clearImg.setName("clearImg");
         geolocateBtn.setName("geolocateBtn");
-        fetchBtn.setName("fetchBtn");
+        galleryBtn.setName("galleryBtn");
+        nextImgBtn.setName("nextImgBtn");
 
-        add(scanFolder);
-        add(openImgBtn);
-        add(uploadBtn);
-        add(exifDataBtn);
-        add(clearImg);
+        add(setPath);
+        add(galleryBtn);
+        add(previousImgBtn);
+//        add(exifDataBtn);
+        add(nextImgBtn);
         add(geolocateBtn);
-        add(fetchBtn);
+        add(syncBtn);
+
 
     }
 

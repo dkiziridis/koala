@@ -1,35 +1,58 @@
 package gr.teicm.koala.models;
 
+import gr.teicm.koala.services.IOServices;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
-import java.util.LinkedList;
+import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.Map;
 
 public class LocalImageCollection
 {
 
-    String path = "user.home";
-    File folder = new File(System.getProperty(path));
-    File[] listOfFiles = folder.listFiles();
-    public LinkedList<ImageIcon> imageList = new LinkedList<>();
+    public Path path;
+    private File[] listOfFiles;
+    private Map<String, ImageIcon> imageCollection;
 
-    public LinkedList<ImageIcon> getImageList()
+
+    public LocalImageCollection()
     {
-        return imageList;
+        path = new IOServices().setPath();
+        File folder = new File(path.toString());
+//        File folder = new File(System.getProperty("user.home"));
+        listOfFiles = folder.listFiles();
+        imageCollection = new HashMap<>();
     }
 
-    public void setImageList() throws IOException
+    public Map<String, ImageIcon> getImageCollection()
     {
-        int count = 0;
-        for (int i = 0; i < listOfFiles.length; i++) //TODO change for
+        return imageCollection;
+    }
+
+    public void initImageList() throws IOException
+    {
+        for (File name : listOfFiles) //TODO change for
         {
-            String name = listOfFiles[i].toString();
-            if (name.endsWith("jpg") || name.endsWith("bmp") || name.endsWith("png") || name.endsWith("jpeg") || name.endsWith("gif") || name.endsWith("JPG"))
+            if (name.getAbsolutePath().endsWith("jpg")
+                    || name.getAbsolutePath().endsWith("bmp")
+                    || name.getAbsolutePath().endsWith("png")
+                    || name.getAbsolutePath().endsWith("jpeg")
+                    || name.getAbsolutePath().endsWith("gif")
+                    || name.getAbsolutePath().endsWith("JPG"))
             {
-                ImageIcon image = new ImageIcon(ImageIO.read(listOfFiles[i]));
-                this.imageList.add(count++, image);
+
+                    ImageIcon value = new ImageIcon(ImageIO.read(name));
+                    String key = name.getAbsolutePath();
+                    this.imageCollection.put(key,value);
             }
         }
+    }
+
+    public void setPath(Path path)
+    {
+        this.path = path;
     }
 }

@@ -28,8 +28,4 @@ public class ThumbnailPanelView extends JPanel
         return gridWidth;
     }
 
-//    public void insertThumbnail(ThumbnailView thumbnailView)
-//    {
-//        add(thumbnailView);
-//    }
 }

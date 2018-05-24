@@ -4,8 +4,9 @@ import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import java.io.File;
+import java.nio.file.Path;
 
-public class OpenLocalImageService
+public class IOServices
 {
     private static ImageIcon image = new ImageIcon();
 
@@ -15,7 +16,11 @@ public class OpenLocalImageService
         fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
         fileChooser.setDialogTitle("Select Image");
         fileChooser.setControlButtonsAreShown(true);
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Photos", "jpg", "gif", "png", "bmp");
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Photos",
+                "jpg",
+                "gif",
+                "png",
+                "bmp");
         fileChooser.addChoosableFileFilter(filter);
         int result = fileChooser.showOpenDialog(null);
         if (result == JFileChooser.APPROVE_OPTION)
@@ -29,5 +34,23 @@ public class OpenLocalImageService
         }
         return image;
     }
+    public Path setPath()
+    {
+        File path;
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new java.io.File("user.home"));
+        chooser.setDialogTitle("Select Folder");
+        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        chooser.setAcceptAllFileFilterUsed(false);
 
+        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
+        {
+            return chooser.getSelectedFile().toPath();
+        }
+        else
+        {
+            path = new File(System.getProperty("user.home"));
+            return path.toPath();
+        }
+    }
 }
