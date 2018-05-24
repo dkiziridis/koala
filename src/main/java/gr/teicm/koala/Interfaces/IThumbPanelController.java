@@ -3,15 +3,11 @@ package gr.teicm.koala.Interfaces;
 import javax.swing.*;
 import java.io.IOException;
 
-public interface IServiceListener
+public interface IThumbPanelController
 {
     void showGallery();
-
     void nextImage();
-
     void previousImage();
-
-    void viewExifData();
-
-    void setPath();
+    void setPath() throws IOException;
+    void showCard(String name);
 }

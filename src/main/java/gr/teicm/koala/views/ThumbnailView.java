@@ -1,14 +1,21 @@
 package gr.teicm.koala.views;
 
 
+import gr.teicm.koala.Interfaces.IAppStateObserver;
+import gr.teicm.koala.Interfaces.IThumbnailListener;
+import gr.teicm.koala.controllers.ThumbnailPanelController;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.nio.file.Path;
 
-public class ThumbnailView extends JPanel
+
+public class ThumbnailView extends JPanel implements IAppStateObserver
 {
     public JLabel imageThumbnail;
+    private String imgPath;
 
     public ThumbnailView(ImageIcon image)
     {
@@ -25,15 +32,6 @@ public class ThumbnailView extends JPanel
                 setBorder(BorderFactory.createLineBorder(Color.gray, 4));
             }
 
-            /* @Override
-             public void mouseClicked(MouseEvent e)
-             {
-                 super.mouseClicked(e);
-                 System.out.println("mouseClicked, panel hidden");
-
-
-             }
- */
             @Override
             public void mouseExited(MouseEvent e)
             {
@@ -42,9 +40,21 @@ public class ThumbnailView extends JPanel
             }
 
         });
+
         add(imageThumbnail);
         setBorder(BorderFactory.createLineBorder(Color.black));
     }
 
 
+    public void setImgPath(String imgPath)
+    {
+        this.imgPath = imgPath;
+    }
+
+
+    @Override
+    public void imageKey(String imageKey)
+    {
+
+    }
 }

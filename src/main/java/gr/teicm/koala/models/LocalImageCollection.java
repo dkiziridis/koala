@@ -13,7 +13,7 @@ import java.util.Map;
 public class LocalImageCollection
 {
 
-    public Path path;
+    private Path path;
     private File[] listOfFiles;
     private Map<String, ImageIcon> imageCollection;
 
@@ -22,7 +22,6 @@ public class LocalImageCollection
     {
         path = new IOServices().setPath();
         File folder = new File(path.toString());
-//        File folder = new File(System.getProperty("user.home"));
         listOfFiles = folder.listFiles();
         imageCollection = new HashMap<>();
     }
@@ -34,7 +33,7 @@ public class LocalImageCollection
 
     public void initImageList() throws IOException
     {
-        for (File name : listOfFiles) //TODO change for
+        for (File name : listOfFiles)
         {
             if (name.getAbsolutePath().endsWith("jpg")
                     || name.getAbsolutePath().endsWith("bmp")
@@ -44,9 +43,9 @@ public class LocalImageCollection
                     || name.getAbsolutePath().endsWith("JPG"))
             {
 
-                    ImageIcon value = new ImageIcon(ImageIO.read(name));
-                    String key = name.getAbsolutePath();
-                    this.imageCollection.put(key,value);
+                ImageIcon value = new ImageIcon(ImageIO.read(name));
+                String key = name.getAbsolutePath();
+                this.imageCollection.put(key, value);
             }
         }
     }
@@ -54,5 +53,18 @@ public class LocalImageCollection
     public void setPath(Path path)
     {
         this.path = path;
+    }
+
+    public void clear()
+    {
+        for (File file : listOfFiles)
+        {
+            file = null;
+        }
+        for (Map.Entry<String, ImageIcon> pair : imageCollection.entrySet())
+        {
+            pair = null;
+        }
+        path = null;
     }
 }

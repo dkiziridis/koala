@@ -38,7 +38,7 @@ public class IOServices
     {
         File path;
         JFileChooser chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new java.io.File("user.home"));
+        chooser.setCurrentDirectory(new File("user.home"));
         chooser.setDialogTitle("Select Folder");
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         chooser.setAcceptAllFileFilterUsed(false);

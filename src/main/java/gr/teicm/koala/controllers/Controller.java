@@ -1,6 +1,6 @@
 package gr.teicm.koala.controllers;
 
-import gr.teicm.koala.Interfaces.IServiceListener;
+import gr.teicm.koala.Interfaces.IThumbPanelController;
 import gr.teicm.koala.services.IOServices;
 import gr.teicm.koala.views.ToolbarView;
 
@@ -13,13 +13,14 @@ public class Controller extends JFrame
 
     private ThumbnailPanelController thumbnailPanelController;
     private ToolbarView toolbarView;
+
     public Controller() throws IOException
     {
         setLayout(new BorderLayout());
         toolbarView = new ToolbarView();
         thumbnailPanelController = new ThumbnailPanelController();
 
-        toolbarView.setServiceListener(new IServiceListener()
+        toolbarView.setServiceListener(new IThumbPanelController()
         {
             @Override
             public void showGallery()
@@ -39,28 +40,18 @@ public class Controller extends JFrame
                 thumbnailPanelController.previousImage();
             }
 
-
             @Override
-            public void viewExifData()
+            public void setPath() throws IOException
             {
-
+                thumbnailPanelController.setPath();
             }
 
             @Override
-            public void setPath()
+            public void showCard(String name)
             {
-//                IOServices openLocalImage = new IOServices();
-                IOServices IOServices = new IOServices();
-                IOServices.setPath();
-
-//                ImageIcon image = openLocalImage.openImage();
-//                Image resizedImg = image.getImage()
-//                        .getScaledInstance(thumbnailPanelController.thumbnailPanelView
-//                                .getWidth(), thumbnailPanelController.thumbnailPanelView
-//                                .getHeight(), Image.SCALE_SMOOTH);
-//                ImageIcon img = new ImageIcon(resizedImg);
-////                thumbnailPanelController.nextImage(img);
+                thumbnailPanelController.showCard(new String());
             }
+
         });
 
 
