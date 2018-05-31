@@ -47,6 +47,9 @@ public class Controller extends JFrame
             public void geolocate()
             {
                 //TODO -->> thumbnailPanelController.geolocate(24.23232,24.545454)
+                setVisible(false);
+
+
             }
 
             @Override
