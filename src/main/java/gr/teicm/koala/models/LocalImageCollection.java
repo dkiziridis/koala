@@ -1,7 +1,5 @@
 package gr.teicm.koala.models;
 
-import gr.teicm.koala.services.IOServices;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.io.File;
@@ -20,8 +18,9 @@ public class LocalImageCollection
 
     public LocalImageCollection()
     {
-        path = new IOServices().setPath();
-        File folder = new File(path.toString());
+//        path = new IOServices().openFolder();
+        String path = System.getProperty("user.home");
+        File folder = new File(path);
         listOfFiles = folder.listFiles();
         imageCollection = new LinkedHashMap<>();
     }

@@ -42,7 +42,7 @@ public class ToolbarView extends JPanel
         {
             try
             {
-                serviceListener.setPath();
+                serviceListener.openFolder();
             } catch (IOException e1)
             {
                 e1.printStackTrace();

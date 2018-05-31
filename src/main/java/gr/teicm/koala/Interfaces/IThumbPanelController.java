@@ -7,7 +7,8 @@ public interface IThumbPanelController
     void showGallery();
     void nextImage();
     void previousImage();
-    void setPath() throws IOException;
+
+    void openFolder() throws IOException;
 
     void viewImage(String name);
 }

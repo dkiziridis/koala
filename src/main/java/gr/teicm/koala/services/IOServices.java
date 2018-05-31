@@ -34,7 +34,8 @@ public class IOServices
         }
         return image;
     }
-    public Path setPath()
+
+    public Path openFolder()
     {
         File path;
         JFileChooser chooser = new JFileChooser();

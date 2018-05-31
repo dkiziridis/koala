@@ -7,6 +7,7 @@ import gr.teicm.koala.views.ToolbarView;
 import javax.swing.*;
 import javax.swing.event.MouseInputAdapter;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseWheelEvent;
 import java.io.IOException;
 
@@ -14,14 +15,12 @@ public class Controller extends JFrame
 {
 
     private ThumbnailPanelController thumbnailPanelController;
-    private ToolbarView toolbarView;
-    private MenuBarView menuBarView;
 
     public Controller() throws IOException
     {
         setLayout(new BorderLayout());
-        toolbarView = new ToolbarView();
-        menuBarView = new MenuBarView();
+        ToolbarView toolbarView = new ToolbarView();
+        MenuBarView menuBarView = new MenuBarView();
         thumbnailPanelController = new ThumbnailPanelController();
 
         toolbarView.setServiceListener(new IThumbPanelController()
@@ -45,9 +44,9 @@ public class Controller extends JFrame
             }
 
             @Override
-            public void setPath() throws IOException
+            public void openFolder() throws IOException
             {
-                thumbnailPanelController.setPath();
+                thumbnailPanelController.openFolder();
             }
 
             @Override
@@ -58,21 +57,39 @@ public class Controller extends JFrame
 
         });
 
+        thumbnailPanelController.addMouseWheelListener(new MouseAdapter()
+        {
+            @Override
+            public void mouseWheelMoved(MouseWheelEvent e)
+            {//TODO change functions
+                super.mouseWheelMoved(e);
+                if (e.getWheelRotation() > 0)
+                {
+                    thumbnailPanelController.nextImage();
+
+                    System.out.println("notches = " + e.getWheelRotation());
+                } else
+                {
+                    thumbnailPanelController.previousImage();
+                    System.out.println("notches = " + e.getWheelRotation());
+                }
+            }
+        });
+
         toolbarView.addMouseWheelListener(new MouseInputAdapter()
         {
             @Override
             public void mouseWheelMoved(MouseWheelEvent e)
             {
                 super.mouseWheelMoved(e);
-                int notches = e.getWheelRotation();
-                if (notches > 0)
+                if (e.getWheelRotation() > 0)
                 {
                     thumbnailPanelController.nextImage();
-                    System.out.println("notches = " + notches);
+                    System.out.println("notches = " + e.getWheelRotation());
                 } else
                 {
                     thumbnailPanelController.previousImage();
-                    System.out.println("notches = " + notches);
+                    System.out.println("notches = " + e.getWheelRotation());
                 }
             }
         });

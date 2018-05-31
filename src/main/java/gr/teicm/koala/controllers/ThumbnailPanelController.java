@@ -47,7 +47,6 @@ public class ThumbnailPanelController extends JPanel implements IThumbPanelContr
         galleryView = null;
         collection.clear();
         removeAll();
-
     }
 
     private void initThumbnailPanel() throws IOException
@@ -74,74 +73,61 @@ public class ThumbnailPanelController extends JPanel implements IThumbPanelContr
     @Override
     public void nextImage()
     {
-
         if (currentImageIndex < collection.getImageCollection().size() - 1)
         {
             currentImageIndex++;
-            removeAll();
-            value = (new ArrayList<>(collection.getImageCollection().values())).get(currentImageIndex);
-            key = (new ArrayList<>(collection.getImageCollection().keySet())).get(currentImageIndex);
-            System.out.println("currentImageIndex = " + currentImageIndex);
-            singleImageView = new SingleImageView(value, key);
-            add(singleImageView, BorderLayout.CENTER);
-            revalidate();
-            repaint();
+            switchImage();
         }
+    }
+
+    private void switchImage()
+    {
+        removeAll();
+        value = (new ArrayList<>(collection.getImageCollection().values())).get(currentImageIndex);
+        key = (new ArrayList<>(collection.getImageCollection().keySet())).get(currentImageIndex);
+        System.out.println("currentImageIndex = " + currentImageIndex);//DEBUG bullshit
+        singleImageView = new SingleImageView(value, key);
+        add(singleImageView, BorderLayout.CENTER);
+        updateUI();
     }
 
     @Override
     public void previousImage()
     {
-
-        if (currentImageIndex > -1 && currentImageIndex != 0)
+        if (currentImageIndex > -1 && currentImageIndex != 0) //Don't fuck up the statement
         {
             currentImageIndex--;
-            removeAll();
-            value = (new ArrayList<>(collection.getImageCollection().values())).get(currentImageIndex);
-            key = (new ArrayList<>(collection.getImageCollection().keySet())).get(currentImageIndex);
-            System.out.println("currentImageIndex = " + currentImageIndex);
-            singleImageView = new SingleImageView(value, key);
-            add(singleImageView, BorderLayout.CENTER);
-            revalidate();
-            repaint();
+            switchImage();
         }
-
     }
 
     @Override
-    public void setPath() throws IOException
+    public void openFolder() throws IOException
     {
         destroyComponents();
         createComponents();
-        revalidate();
-        repaint();
+        updateUI();
     }
-
 
     @Override
     public void viewImage(String name)
     {
-        removeAll();
+        removeAll();//Problem ?
         value = collection.getImageCollection().get(name);
         currentImageIndex = (new ArrayList<>(collection.getImageCollection().keySet())).indexOf(name);
         key = (new ArrayList<>(collection.getImageCollection().keySet())).get(currentImageIndex);
         System.out.println("currentImageIndex = " + currentImageIndex);
         singleImageView = new SingleImageView(value, key);
         add(singleImageView, BorderLayout.CENTER);
-        revalidate();
-        repaint();
+        updateUI();
     }
 
     public void showGallery()
     {
-
         removeAll();
         JScrollPane thumbnailGallery = new JScrollPane(galleryView);
         thumbnailGallery.getVerticalScrollBar().setUnitIncrement(16);
         add(thumbnailGallery, BorderLayout.CENTER);
-        revalidate();
-        repaint();
-
+        updateUI();
     }
-
 }

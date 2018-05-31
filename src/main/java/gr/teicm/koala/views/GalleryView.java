@@ -11,6 +11,5 @@ public class GalleryView extends JPanel
 
         setLayout(new GridLayout(0, 4, 2, 2));
         add(thumbnailView);
-
     }
 }
