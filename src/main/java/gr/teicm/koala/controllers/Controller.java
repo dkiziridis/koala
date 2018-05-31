@@ -44,6 +44,12 @@ public class Controller extends JFrame
             }
 
             @Override
+            public void geolocate()
+            {
+                //TODO -->> thumbnailPanelController.geolocate(24.23232,24.545454)
+            }
+
+            @Override
             public void openFolder() throws IOException
             {
                 thumbnailPanelController.openFolder();

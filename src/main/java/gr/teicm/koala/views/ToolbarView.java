@@ -49,13 +49,16 @@ public class ToolbarView extends JPanel
             }
         });
 
-        previousImgBtn.setName("previousImgBtn");
-        setPathBtn.setName("setPathBtn");
-        syncBtn.setName("syncBtn");
-        exifDataBtn.setName("exifDataBtn");
-        geolocateBtn.setName("geolocateBtn");
-        galleryBtn.setName("galleryBtn");
-        nextImgBtn.setName("nextImgBtn");
+        geolocateBtn.addActionListener(e -> serviceListener.geolocate());
+
+
+//        previousImgBtn.setName("previousImgBtn");
+//        setPathBtn.setName("setPathBtn");
+//        syncBtn.setName("syncBtn");
+//        exifDataBtn.setName("exifDataBtn");
+//        geolocateBtn.setName("geolocateBtn");
+//        galleryBtn.setName("galleryBtn");
+//        nextImgBtn.setName("nextImgBtn");
 
         add(setPathBtn);
         add(galleryBtn);

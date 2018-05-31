@@ -8,6 +8,7 @@ public interface IThumbPanelController
     void nextImage();
     void previousImage();
 
+    void geolocate();
     void openFolder() throws IOException;
 
     void viewImage(String name);
