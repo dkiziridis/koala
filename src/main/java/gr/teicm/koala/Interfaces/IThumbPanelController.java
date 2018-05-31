@@ -1,6 +1,5 @@
 package gr.teicm.koala.Interfaces;
 
-import javax.swing.*;
 import java.io.IOException;
 
 public interface IThumbPanelController
@@ -9,5 +8,6 @@ public interface IThumbPanelController
     void nextImage();
     void previousImage();
     void setPath() throws IOException;
-    void showCard(String name);
+
+    void viewImage(String name);
 }

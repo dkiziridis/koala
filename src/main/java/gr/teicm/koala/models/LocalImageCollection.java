@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class LocalImageCollection
@@ -15,7 +15,7 @@ public class LocalImageCollection
 
     private Path path;
     private File[] listOfFiles;
-    private Map<String, ImageIcon> imageCollection;
+    private LinkedHashMap<String, ImageIcon> imageCollection;
 
 
     public LocalImageCollection()
@@ -23,7 +23,7 @@ public class LocalImageCollection
         path = new IOServices().setPath();
         File folder = new File(path.toString());
         listOfFiles = folder.listFiles();
-        imageCollection = new HashMap<>();
+        imageCollection = new LinkedHashMap<>();
     }
 
     public Map<String, ImageIcon> getImageCollection()

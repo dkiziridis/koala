@@ -9,13 +9,13 @@ import java.io.IOException;
 public class ToolbarView extends JPanel
 {
 
-    public JButton setPathBtn;
-    public JButton syncBtn;
-    public JButton exifDataBtn;
-    public JButton nextImgBtn;
-    public JButton geolocateBtn;
-    public JButton galleryBtn;
-    public JButton previousImgBtn;
+    private JButton setPathBtn;
+    private JButton syncBtn;
+    private JButton exifDataBtn;
+    private JButton nextImgBtn;
+    private JButton geolocateBtn;
+    private JButton galleryBtn;
+    private JButton previousImgBtn;
 
     private IThumbPanelController serviceListener;
 

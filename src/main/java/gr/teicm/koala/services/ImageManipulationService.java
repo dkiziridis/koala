@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-public class ResizeImageService
+public class ImageManipulationService
 {
 
     public Image makeThumbnail(ImageIcon image) throws IOException
@@ -20,6 +20,19 @@ public class ResizeImageService
                 .asBufferedImage();
 
         return thumbnail;
+    }
+
+    public ImageIcon imageZoom(ImageIcon imageIcon, int zoomLevel)
+    {
+        int newImageWidth = imageIcon.getIconWidth() * zoomLevel;
+        int newImageHeight = imageIcon.getIconHeight() * zoomLevel;
+
+        BufferedImage resizedImage = new BufferedImage(newImageWidth, newImageHeight, 4);
+        resizedImage.getScaledInstance(newImageWidth, newImageHeight, 3);
+
+        ImageIcon temp = new ImageIcon(resizedImage);
+
+        return temp;
     }
 
     public static void drawScaledImage(Image image, Component canvas, Graphics g)

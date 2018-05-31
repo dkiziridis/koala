@@ -1,55 +1,23 @@
-package gr.teicm.koala.views;//package gr.teicm.koala.views;
-//
-//import gr.teicm.koala.services.ResizeImageService;
-//
-//import javax.swing.*;
-//import java.awt.*;
-//
-//public class SingleImageView extends JPanel
-//{
-//
-//    public SingleImageView(ImageIcon imageIcon)
-//    {
-//
-//        Image scaled = imageIcon.getImage();
-//
-////        Image scaledImage = scaled.getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH);
-//        JLabel singleImage = new ScaledImageLabel();
-//        setLayout(new BorderLayout());
-//        singleImage.setIcon(scaled);
-//        JScrollPane scrollPane = new JScrollPane(singleImage);
-//        add(scrollPane, BorderLayout.CENTER);
-//        setVisible(true);
-//        //TODO add more buttons
-//
-//
-//    }
-//
-//    public class ScaledImageLabel extends JLabel
-//    {
-//        protected void paintComponent(Graphics g)
-//        {
-//            ImageIcon icon = (ImageIcon) getIcon();
-//            if (icon != null)
-//            {
-//                ResizeImageService.drawScaledImage(icon.getImage(), this, g);
-//            }
-//        }
-//    }
-//}
+package gr.teicm.koala.views;
+
 
 
 import gr.teicm.koala.CustomComponents.ScaledImageLabel;
+import gr.teicm.koala.services.ImageManipulationService;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
 
 
-public class SingleImageView extends JPanel
+public class SingleImageView extends JPanel implements MouseWheelListener
 {
-    private JLabel labelImage = new ScaledImageLabel();
+    private String imagePath;
+    private ImageIcon imageIcon;
+    private ScaledImageLabel labelImage = new ScaledImageLabel();
 
-    public SingleImageView(ImageIcon imageIcon)
+    public SingleImageView(ImageIcon imageIcon, String imagePath)
     {
         setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
@@ -57,11 +25,15 @@ public class SingleImageView extends JPanel
         constraints.fill = GridBagConstraints.NONE;
         constraints.anchor = GridBagConstraints.NORTHWEST;
 
-        labelImage.setIcon(imageIcon);
+        this.imagePath = imagePath;
+        this.imageIcon = imageIcon;
+        labelImage.setIcon(this.imageIcon);
 
         constraints.gridy = 0;
         constraints.gridx = 0;
-//        add(labelImgFilePath, constraints);
+        JLabel labelImgFilePath = new JLabel();
+        labelImgFilePath.setText(this.imagePath);
+        add(labelImgFilePath, constraints);
 
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.weightx = 1.0;
@@ -86,8 +58,23 @@ public class SingleImageView extends JPanel
 
     }
 
+    public String getImagePath()
+    {
+        return imagePath;
+    }
 
-
-
-
+    @Override
+    public void mouseWheelMoved(MouseWheelEvent mouseWheelEvent)
+    {
+        if (mouseWheelEvent.getWheelRotation() > 0)
+        {
+            ImageManipulationService imageManipulationService = new ImageManipulationService();
+            //TEST TODO
+//            labelImage.setIcon();
+            labelImage.setIcon(imageManipulationService.imageZoom(imageIcon, 10));
+            revalidate();
+            repaint();
+            System.out.println("MouseWheel value = " + mouseWheelEvent);
+        }
+    }
 }

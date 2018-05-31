@@ -2,7 +2,6 @@ package gr.teicm.koala.services;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
 import java.io.File;
 import java.nio.file.Path;
 
@@ -10,6 +9,7 @@ public class IOServices
 {
     private static ImageIcon image = new ImageIcon();
 
+    //TODO BETTER
     public ImageIcon openImage()
     {
         JFileChooser fileChooser = new JFileChooser();

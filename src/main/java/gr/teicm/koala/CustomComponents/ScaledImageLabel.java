@@ -1,11 +1,9 @@
 package gr.teicm.koala.CustomComponents;
 
-import gr.teicm.koala.services.ResizeImageService;
+import gr.teicm.koala.services.ImageManipulationService;
 
-import java.awt.Graphics;
-
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+import javax.swing.*;
+import java.awt.*;
 
 
 public class ScaledImageLabel extends JLabel
@@ -15,7 +13,7 @@ public class ScaledImageLabel extends JLabel
         ImageIcon icon = (ImageIcon) getIcon();
         if (icon != null)
         {
-            ResizeImageService.drawScaledImage(icon.getImage(), this, g);
+            ImageManipulationService.drawScaledImage(icon.getImage(), this, g);
         }
     }
 }
