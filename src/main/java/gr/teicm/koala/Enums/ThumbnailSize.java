@@ -1,4 +1,4 @@
-package gr.teicm.koala;
+package gr.teicm.koala.Enums;
 
 public enum ThumbnailSize
 {

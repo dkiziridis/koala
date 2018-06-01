@@ -1,14 +1,19 @@
 package gr.teicm.koala.controllers;
 
-import gr.teicm.koala.Interfaces.IThumbPanelController;
+import gr.teicm.koala.Interfaces.IToolbarListener;
+import gr.teicm.koala.models.LocalImageCollection;
+import gr.teicm.koala.views.GalleryView;
 import gr.teicm.koala.views.MenuBarView;
 import gr.teicm.koala.views.ToolbarView;
+import org.apache.tika.exception.TikaException;
+import org.xml.sax.SAXException;
 
+import javax.print.PrintException;
 import javax.swing.*;
-import javax.swing.event.MouseInputAdapter;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseWheelEvent;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Controller extends JFrame
@@ -18,12 +23,14 @@ public class Controller extends JFrame
 
     public Controller() throws IOException
     {
+        LocalImageCollection collection = new LocalImageCollection();
+        GalleryView galleryView = new GalleryView();
         setLayout(new BorderLayout());
         ToolbarView toolbarView = new ToolbarView();
         MenuBarView menuBarView = new MenuBarView();
-        thumbnailPanelController = new ThumbnailPanelController();
+        thumbnailPanelController = new ThumbnailPanelController(collection, galleryView);
 
-        toolbarView.setServiceListener(new IThumbPanelController()
+        toolbarView.setiToolbarListener(new IToolbarListener()
         {
             @Override
             public void showGallery()
@@ -44,11 +51,12 @@ public class Controller extends JFrame
             }
 
             @Override
-            public void geolocate()
+            public void geolocate() throws TikaException, IOException, SAXException
             {
-                //TODO -->> thumbnailPanelController.geolocate(24.23232,24.545454)
+                //TODO -->> thumbnailPanelView.geolocate(24.23232,24.545454)
                 setVisible(false);
-
+                thumbnailPanelController.geolocate();
+                setVisible(true);
 
             }
 
@@ -59,9 +67,10 @@ public class Controller extends JFrame
             }
 
             @Override
-            public void viewImage(String name)
+            public void printImage(String path) throws FileNotFoundException, PrintException
             {
-                thumbnailPanelController.viewImage("");
+                thumbnailPanelController.printImage(path);
+
             }
 
         });
@@ -75,7 +84,6 @@ public class Controller extends JFrame
                 if (e.getWheelRotation() > 0)
                 {
                     thumbnailPanelController.nextImage();
-
                     System.out.println("notches = " + e.getWheelRotation());
                 } else
                 {
@@ -85,23 +93,6 @@ public class Controller extends JFrame
             }
         });
 
-        toolbarView.addMouseWheelListener(new MouseInputAdapter()
-        {
-            @Override
-            public void mouseWheelMoved(MouseWheelEvent e)
-            {
-                super.mouseWheelMoved(e);
-                if (e.getWheelRotation() > 0)
-                {
-                    thumbnailPanelController.nextImage();
-                    System.out.println("notches = " + e.getWheelRotation());
-                } else
-                {
-                    thumbnailPanelController.previousImage();
-                    System.out.println("notches = " + e.getWheelRotation());
-                }
-            }
-        });
 
         add(menuBarView, BorderLayout.NORTH);
         add(toolbarView, BorderLayout.SOUTH);

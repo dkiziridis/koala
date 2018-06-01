@@ -1,21 +1,27 @@
 package gr.teicm.koala.controllers;
 
-import gr.teicm.koala.Interfaces.IThumbPanelController;
+import gr.teicm.koala.Interfaces.IToolbarListener;
 import gr.teicm.koala.models.LocalImageCollection;
+import gr.teicm.koala.services.GeolocateService;
 import gr.teicm.koala.services.ImageManipulationService;
+import gr.teicm.koala.services.PrintImageService;
 import gr.teicm.koala.views.GalleryView;
 import gr.teicm.koala.views.SingleImageView;
-import gr.teicm.koala.views.ThumbnailView;
+import org.apache.tika.exception.TikaException;
+import org.xml.sax.SAXException;
 
+import javax.print.PrintException;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class ThumbnailPanelController extends JPanel implements IThumbPanelController
+class ThumbnailPanelController extends JPanel implements IToolbarListener
 {
     private GalleryView galleryView;
     private LocalImageCollection collection;
@@ -24,15 +30,16 @@ public class ThumbnailPanelController extends JPanel implements IThumbPanelContr
     private String key;
     private ImageIcon value;
 
-    ThumbnailPanelController() throws IOException
+
+    public ThumbnailPanelController(LocalImageCollection collection, GalleryView galleryView) throws IOException
     {
+        this.collection = collection;
+        this.galleryView = galleryView;
         createComponents();
     }
 
     private void createComponents() throws IOException
     {
-        collection = new LocalImageCollection();
-        galleryView = new GalleryView();
         collection.initImageList();
         setLayout(new BorderLayout());
         JScrollPane thumbnailGallery = new JScrollPane(galleryView);
@@ -56,8 +63,8 @@ public class ThumbnailPanelController extends JPanel implements IThumbPanelContr
         for (Map.Entry<String, ImageIcon> pair : collection.getImageCollection().entrySet())
         {
             Image temp = imageManipulationService.makeThumbnail(pair.getValue());
-            ThumbnailView thumbnailView = new ThumbnailView(new ImageIcon(temp));
-            thumbnailView.imageThumbnail.addMouseListener(new MouseAdapter()
+            ThumbnailController thumbnailController = new ThumbnailController(new ImageIcon(temp), pair.getKey());
+            thumbnailController.imageThumbnail.addMouseListener(new MouseAdapter()
             {
                 @Override
                 public void mouseClicked(MouseEvent e)
@@ -66,7 +73,7 @@ public class ThumbnailPanelController extends JPanel implements IThumbPanelContr
                     viewImage(pair.getKey());
                 }
             });
-            galleryView.ThumbnailPanelView(thumbnailView);
+            galleryView.ThumbnailPanelView(thumbnailController);
         }
     }
 
@@ -102,6 +109,12 @@ public class ThumbnailPanelController extends JPanel implements IThumbPanelContr
     }
 
     @Override
+    public void geolocate() throws TikaException, IOException, SAXException
+    {
+        new GeolocateService(key);
+    }
+
+    @Override
     public void openFolder() throws IOException
     {
         destroyComponents();
@@ -110,6 +123,13 @@ public class ThumbnailPanelController extends JPanel implements IThumbPanelContr
     }
 
     @Override
+    public void printImage(String path) throws FileNotFoundException, PrintException
+    {
+        FileInputStream file;
+        file = new FileInputStream(path);
+        new PrintImageService(file);
+    }
+
     public void viewImage(String name)
     {
         removeAll();//Problem ?

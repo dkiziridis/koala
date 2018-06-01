@@ -1,60 +1,52 @@
 package gr.teicm.koala.views;
 
 
-import gr.teicm.koala.Interfaces.IAppStateObserver;
 import gr.teicm.koala.Interfaces.IThumbnailListener;
-import gr.teicm.koala.controllers.ThumbnailPanelController;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.nio.file.Path;
+import java.awt.event.MouseListener;
 
 
-public class ThumbnailView extends JPanel implements IAppStateObserver
+public class ThumbnailView extends JPanel
 {
     public JLabel imageThumbnail;
     private String imgPath;
+    public JCheckBox checkBox;
+    public JButton exifBtn;
+    public IThumbnailListener iThumbnailListener;
+    public MouseListener mouseListener;
 
-    public ThumbnailView(ImageIcon image)
+    public void setMouseListener(MouseListener mouseListener)
     {
+        this.mouseListener = mouseListener;
+    }
+
+    public void setiThumbnailListener(IThumbnailListener iThumbnailListener)
+    {
+        this.iThumbnailListener = iThumbnailListener;
+    }
+
+    public ThumbnailView(ImageIcon image, String imgPath)
+    {
+        setLayout(new BorderLayout());
+        this.imgPath = imgPath;
+
+        exifBtn = new JButton("EXIF");
+        checkBox = new JCheckBox("Select");
+
+
+        checkBox.addActionListener(e -> iThumbnailListener.selectedImage());
+        exifBtn.addActionListener(e -> iThumbnailListener.viewEXIF());
+
         imageThumbnail = new JLabel();
         imageThumbnail.setIcon(image);
-        imageThumbnail.addMouseListener(new MouseAdapter()
-        {
-            @Override
-            public void mouseEntered(MouseEvent e)
-            {
-                super.mouseEntered(e);
-                System.out.println("mouseEntered");
-                setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-                setBorder(BorderFactory.createLineBorder(Color.gray, 4));
-            }
 
-            @Override
-            public void mouseExited(MouseEvent e)
-            {
-                super.mouseExited(e);
-                setBorder(BorderFactory.createLineBorder(Color.black));
-            }
 
-        });
-
-        add(imageThumbnail);
+        add(exifBtn, BorderLayout.PAGE_END);
+        add(checkBox, BorderLayout.AFTER_LAST_LINE);
+        add(imageThumbnail, BorderLayout.CENTER);
         setBorder(BorderFactory.createLineBorder(Color.black));
     }
 
-
-    public void setImgPath(String imgPath)
-    {
-        this.imgPath = imgPath;
-    }
-
-
-    @Override
-    public void imageKey(String imageKey)
-    {
-
-    }
 }

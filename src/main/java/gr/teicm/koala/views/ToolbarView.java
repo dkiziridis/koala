@@ -1,14 +1,20 @@
 package gr.teicm.koala.views;
 
-import gr.teicm.koala.Interfaces.IThumbPanelController;
+import gr.teicm.koala.Interfaces.IToolbarListener;
+import org.apache.tika.exception.TikaException;
+import org.xml.sax.SAXException;
 
+import javax.print.PrintException;
 import javax.swing.*;
 import java.awt.*;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Path;
 
 public class ToolbarView extends JPanel
 {
 
+    private static final Path Path = null;
     private JButton setPathBtn;
     private JButton syncBtn;
     private JButton exifDataBtn;
@@ -16,8 +22,9 @@ public class ToolbarView extends JPanel
     private JButton geolocateBtn;
     private JButton galleryBtn;
     private JButton previousImgBtn;
+    private JButton printImgBtn;
 
-    private IThumbPanelController serviceListener;
+    private IToolbarListener iToolbarListener;
 
     public ToolbarView()
     {
@@ -30,26 +37,46 @@ public class ToolbarView extends JPanel
         nextImgBtn = new JButton(" > ");
         geolocateBtn = new JButton("Geolocate");
         galleryBtn = new JButton("Gallery");
+        printImgBtn = new JButton("Print");
 
+        printImgBtn.addActionListener(e ->
+        {
+            try
+            {
+                iToolbarListener.printImage("");
+            } catch (FileNotFoundException | PrintException e1)
+            {
+                e1.printStackTrace();
+            }
+        });
 
-        previousImgBtn.addActionListener(e -> serviceListener.previousImage());
+        previousImgBtn.addActionListener(e -> iToolbarListener.previousImage());
 
-        nextImgBtn.addActionListener(e -> serviceListener.nextImage());
+        nextImgBtn.addActionListener(e -> iToolbarListener.nextImage());
 
-        galleryBtn.addActionListener(e -> serviceListener.showGallery());
+        galleryBtn.addActionListener(e -> iToolbarListener.showGallery());
 
         setPathBtn.addActionListener(e ->
         {
             try
             {
-                serviceListener.openFolder();
+                iToolbarListener.openFolder();
             } catch (IOException e1)
             {
                 e1.printStackTrace();
             }
         });
 
-        geolocateBtn.addActionListener(e -> serviceListener.geolocate());
+        geolocateBtn.addActionListener(e ->
+        {
+            try
+            {
+                iToolbarListener.geolocate();
+            } catch (TikaException | IOException | SAXException e1)
+            {
+                e1.printStackTrace();
+            }
+        });
 
 
 //        previousImgBtn.setName("previousImgBtn");
@@ -65,14 +92,15 @@ public class ToolbarView extends JPanel
         add(previousImgBtn);
         add(nextImgBtn);
         add(geolocateBtn);
+        add(printImgBtn);
         add(syncBtn);
 
 
     }
 
-    public void setServiceListener(IThumbPanelController serviceListener)
+    public void setiToolbarListener(IToolbarListener iToolbarListener)
     {
-        this.serviceListener = serviceListener;
+        this.iToolbarListener = iToolbarListener;
     }
 
 }

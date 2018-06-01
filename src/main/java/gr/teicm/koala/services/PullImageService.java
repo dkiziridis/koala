@@ -5,7 +5,7 @@ import org.hibernate.Session;
 
 import javax.swing.*;
 
-public class FetchImageService
+public class PullImageService
 {
 
     public ImageIcon fetchImageById(int imageId)

@@ -7,19 +7,21 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
+import static gr.teicm.koala.Enums.ThumbnailSize.HUGE;
+
 public class ImageManipulationService
 {
 
     public Image makeThumbnail(ImageIcon image) throws IOException
     {
         Image imageTemp = image.getImage();
-        BufferedImage buffered = (BufferedImage) imageTemp;
+        BufferedImage buffered;
+        buffered = (BufferedImage) imageTemp;
 
-        BufferedImage thumbnail = Thumbnails.of(buffered)
-                .size(200, 200)
+        return Thumbnails.of(buffered)
+                .size(HUGE.getValue(),
+                        HUGE.getValue())
                 .asBufferedImage();
-
-        return thumbnail;
     }
 
     public ImageIcon imageZoom(ImageIcon imageIcon, int zoomLevel)

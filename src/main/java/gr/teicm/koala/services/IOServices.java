@@ -7,13 +7,13 @@ import java.nio.file.Path;
 
 public class IOServices
 {
-    private static ImageIcon image = new ImageIcon();
 
-    //TODO BETTER
+    //TODO BETTER?
     public ImageIcon openImage()
     {
+        ImageIcon image = new ImageIcon();
         JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        fileChooser.setCurrentDirectory(new File(System.getProperty("getUser.home")));
         fileChooser.setDialogTitle("Select Image");
         fileChooser.setControlButtonsAreShown(true);
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Photos",
@@ -39,7 +39,7 @@ public class IOServices
     {
         File path;
         JFileChooser chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new File("user.home"));
+        chooser.setCurrentDirectory(new File("getUser.home"));
         chooser.setDialogTitle("Select Folder");
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         chooser.setAcceptAllFileFilterUsed(false);
@@ -50,7 +50,7 @@ public class IOServices
         }
         else
         {
-            path = new File(System.getProperty("user.home"));
+            path = new File(System.getProperty("getUser.home"));
             return path.toPath();
         }
     }
