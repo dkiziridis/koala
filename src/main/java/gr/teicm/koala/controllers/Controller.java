@@ -13,7 +13,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseWheelEvent;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Controller extends JFrame
@@ -67,7 +66,7 @@ public class Controller extends JFrame
             }
 
             @Override
-            public void printImage(String path) throws FileNotFoundException, PrintException
+            public void printImage(String path) throws IOException, PrintException
             {
                 thumbnailPanelController.printImage(path);
 

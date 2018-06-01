@@ -7,7 +7,6 @@ import org.xml.sax.SAXException;
 import javax.print.PrintException;
 import javax.swing.*;
 import java.awt.*;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Path;
 
@@ -44,7 +43,7 @@ public class ToolbarView extends JPanel
             try
             {
                 iToolbarListener.printImage("");
-            } catch (FileNotFoundException | PrintException e1)
+            } catch (PrintException | IOException e1)
             {
                 e1.printStackTrace();
             }

@@ -4,7 +4,6 @@ import org.apache.tika.exception.TikaException;
 import org.xml.sax.SAXException;
 
 import javax.print.PrintException;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public interface IToolbarListener
@@ -16,5 +15,5 @@ public interface IToolbarListener
     void geolocate() throws TikaException, IOException, SAXException;
     void openFolder() throws IOException;
 
-    void printImage(String path) throws FileNotFoundException, PrintException;
+    void printImage(String path) throws IOException, PrintException;
 }

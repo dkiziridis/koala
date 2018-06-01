@@ -16,7 +16,6 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
@@ -123,11 +122,14 @@ class ThumbnailPanelController extends JPanel implements IToolbarListener
     }
 
     @Override
-    public void printImage(String path) throws FileNotFoundException, PrintException
+    public void printImage(String path) throws IOException, PrintException
     {
+        path = key;
         FileInputStream file;
         file = new FileInputStream(path);
         new PrintImageService(file);
+
+
     }
 
     public void viewImage(String name)

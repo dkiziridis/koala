@@ -8,7 +8,15 @@ public class MessageService
     {
         JOptionPane.showMessageDialog(null,
                 "No Lat/Long data available for this image. :\n" + string,
-                "Error: No Latitude and/or Longitude Data found.",
+                "EXIF Error!",
+                JOptionPane.ERROR_MESSAGE);
+    }
+
+    public void noPrinterService()
+    {
+        JOptionPane.showMessageDialog(null,
+                "No Printer services available on this machine",
+                "Print Services Error!",
                 JOptionPane.ERROR_MESSAGE);
     }
 }
