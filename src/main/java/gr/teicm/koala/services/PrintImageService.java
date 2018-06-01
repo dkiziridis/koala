@@ -23,7 +23,6 @@ public class PrintImageService
         PrintService ps = pss[0];
         System.out.println("Printing to " + ps);
         DocPrintJob job = ps.createPrintJob();
-//        FileInputStream fin = new FileInputStream("YOurImageFileName.PNG");
         Doc doc = new SimpleDoc(img, DocFlavor.INPUT_STREAM.GIF, null);
         job.print(doc, pras);
         img.close();
