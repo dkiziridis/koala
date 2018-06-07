@@ -26,7 +26,7 @@ public class KPanel
     {
 
         viewArea.setLayout(new GridLayout(0, 4, 2, 2));
-        viewArea.add(KThumbnail.imageThumbnail);
+        viewArea.add(KThumbnail.getThumbnailPane());
         viewArea.updateUI();
     }
 

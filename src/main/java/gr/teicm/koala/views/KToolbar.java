@@ -86,6 +86,7 @@ public class KToolbar extends JPanel
         });
 
 
+
         add(setPathBtn);
         add(galleryBtn);
         add(previousImgBtn);
@@ -97,6 +98,13 @@ public class KToolbar extends JPanel
 
 
     }
+
+    public void hideOrShowButtons(boolean bool)
+    {
+        setPathBtn.setVisible(bool);
+        syncBtn.setVisible(bool);
+    }
+
 
     public void setIKToolbar(IKToolbar IKToolbar)
     {

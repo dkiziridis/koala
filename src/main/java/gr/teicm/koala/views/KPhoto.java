@@ -10,6 +10,7 @@ import java.awt.*;
 public class KPhoto
 {
     public JPanel imagePanel = new JPanel();
+    private JButton geolocate;
     private String imagePath;
     private ImageIcon imageIcon;
     private ScaledImageLabel labelImage = new ScaledImageLabel();
@@ -28,20 +29,21 @@ public class KPhoto
 
         constraints.gridy = 0;
         constraints.gridx = 0;
-        JLabel labelImgFilePath = new JLabel();
-        labelImgFilePath.setText(this.imagePath);
-        imagePanel.add(labelImgFilePath, constraints);
+        JLabel imagePath = new JLabel();
+        imagePath.setText(this.imagePath);
+
 
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.weightx = 1.0;
 
+        geolocate = new JButton("Geolocate");
         constraints.gridx = 1;
-//        add(fieldImgFilePath, constraints);
+        imagePanel.add(imagePath, constraints);
 
         constraints.gridx = 2;
-        constraints.fill = GridBagConstraints.NONE;
+        constraints.fill = GridBagConstraints.PAGE_END;
         constraints.weightx = 0.0;
-//        add(buttonDisplay, constraints);
+        imagePanel.add(geolocate, constraints);
 
         constraints.fill = GridBagConstraints.BOTH;
         constraints.weightx = 1.0;

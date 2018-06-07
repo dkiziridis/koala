@@ -10,7 +10,6 @@ import org.xml.sax.SAXException;
 
 import javax.print.PrintException;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.FileInputStream;
@@ -20,22 +19,21 @@ public class Controller
 {
     private LocalImageCollection collection;
     private KPanel kPanel;
-    private KToolbar KToolbar = new KToolbar();
-    private KMenuBar KMenuBar = new KMenuBar();//TODO
-    private JFrame frame;
+    private KToolbar kToolbar = new KToolbar();
+
 
     public Controller(LocalImageCollection collection, KPanel kPanel) throws IOException
     {
         this.collection = collection;
         this.kPanel = kPanel;
-        frame = new JFrame();
 
-        KToolbar.setIKToolbar(new IKToolbar()
+        kToolbar.setIKToolbar(new IKToolbar()
         {
             @Override
             public void showGallery() throws IOException
             {
                 kPanel.getViewArea().removeAll();
+                kToolbar.hideOrShowButtons(true);
                 initKPanel();
             }
 
@@ -43,14 +41,14 @@ public class Controller
             public void nextImage()
             {
                 kPanel.showImage(new KPhoto(collection.getImage(1)));
-
+                kToolbar.hideOrShowButtons(false);
             }
 
             @Override
             public void previousImage()
             {
                 kPanel.showImage(new KPhoto(collection.getImage(-1)));
-
+                kToolbar.hideOrShowButtons(false);
             }
 
             @Override
@@ -81,28 +79,24 @@ public class Controller
                 new PrintImageService(file);
             }
         });
+
+        kToolbar.addMouseWheelListener(mouseWheelEvent ->
+        {
+            if (mouseWheelEvent.getWheelRotation() > 1)
+            {
+                kPanel.showImage(new KPhoto(collection.getImage(1)));
+                kToolbar.hideOrShowButtons(false);
+            } else
+            {
+                kPanel.showImage(new KPhoto(collection.getImage(-1)));
+                kToolbar.hideOrShowButtons(false);
+            }
+        });
         initKPanel();
-        initFrame();
+        KMenuBar kMenuBar = new KMenuBar();
+        Koala koala = new Koala(kMenuBar, kPanel, kToolbar);
     }
 
-    private void initFrame()
-    {
-        JScrollPane kScrollPanel = new JScrollPane(kPanel.getViewArea());
-        kScrollPanel.getVerticalScrollBar().setUnitIncrement(16);
-
-        frame.setLayout(new BorderLayout());
-
-        frame.add(KMenuBar, BorderLayout.NORTH);
-        frame.add(KToolbar, BorderLayout.SOUTH);
-        frame.add(kScrollPanel, BorderLayout.CENTER);
-
-        frame.setTitle("Koala Photo Album");
-        frame.setSize(1000, 600);
-        frame.setLocationRelativeTo(null);
-        frame.setMinimumSize(new Dimension(800, 600));
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-    }
 
     private void initKPanel() throws IOException
     {
@@ -117,23 +111,39 @@ public class Controller
                 {
                     super.mouseClicked(e);
                     kPanel.showImage(new KPhoto(collection.getImageByPath(image.getDescription())));
+                    kToolbar.hideOrShowButtons(false);
                 }
 
                 @Override
                 public void mouseEntered(MouseEvent e)
                 {
                     super.mouseEntered(e);
-                    kThumbnail.imageThumbnail.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-                    kThumbnail.imageThumbnail.setBorder(BorderFactory.createLineBorder(Color.gray, 4));
+                    kThumbnail.setBorder();
                 }
 
                 @Override
                 public void mouseExited(MouseEvent e)
                 {
                     super.mouseExited(e);
-                    kThumbnail.imageThumbnail.setBorder(BorderFactory.createLineBorder(Color.black));
+                    kThumbnail.unsetBorder();
                 }
             });
+
+            kThumbnail.setIKThumbnail(new IKThumbnail()
+            {
+                @Override
+                public void selectedImage()
+                {
+                    System.out.println("lalal");
+                }
+
+                @Override
+                public void viewEXIF()
+                {
+                    System.out.println("adsadas");
+                }
+            });
+
             kPanel.addThumbnail(kThumbnail);
         }
     }
