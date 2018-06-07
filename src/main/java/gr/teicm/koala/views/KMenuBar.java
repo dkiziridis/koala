@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 
-public class MenuBarView extends JMenuBar
+public class KMenuBar extends JMenuBar
 {
     private final JMenu file;
     private final JMenu edit;
@@ -19,7 +19,7 @@ public class MenuBarView extends JMenuBar
     private final JMenuItem helpAbout;
     private final JMenuItem optionsChangeBorder;
 
-    public MenuBarView()
+    public KMenuBar()
     {
         setBorder(BorderFactory.createEtchedBorder(Color.lightGray, Color.black));
         setLayout(new FlowLayout(FlowLayout.LEADING));

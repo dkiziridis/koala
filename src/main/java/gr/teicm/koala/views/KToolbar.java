@@ -1,6 +1,5 @@
 package gr.teicm.koala.views;
 
-import gr.teicm.koala.Interfaces.IToolbarListener;
 import org.apache.tika.exception.TikaException;
 import org.xml.sax.SAXException;
 
@@ -10,7 +9,7 @@ import java.awt.*;
 import java.io.IOException;
 import java.nio.file.Path;
 
-public class ToolbarView extends JPanel
+public class KToolbar extends JPanel
 {
 
     private static final Path Path = null;
@@ -23,9 +22,9 @@ public class ToolbarView extends JPanel
     private JButton previousImgBtn;
     private JButton printImgBtn;
 
-    private IToolbarListener iToolbarListener;
+    private IKToolbar IKToolbar;
 
-    public ToolbarView()
+    public KToolbar()
     {
         setBorder(BorderFactory.createEtchedBorder());
         setLayout(new FlowLayout(FlowLayout.CENTER));
@@ -42,24 +41,33 @@ public class ToolbarView extends JPanel
         {
             try
             {
-                iToolbarListener.printImage("");
+                IKToolbar.printImage();
             } catch (PrintException | IOException e1)
             {
                 e1.printStackTrace();
             }
         });
 
-        previousImgBtn.addActionListener(e -> iToolbarListener.previousImage());
+        previousImgBtn.addActionListener(e -> IKToolbar.previousImage());
 
-        nextImgBtn.addActionListener(e -> iToolbarListener.nextImage());
+        nextImgBtn.addActionListener(e -> IKToolbar.nextImage());
 
-        galleryBtn.addActionListener(e -> iToolbarListener.showGallery());
+        galleryBtn.addActionListener(e ->
+        {
+            try
+            {
+                IKToolbar.showGallery();
+            } catch (IOException e1)
+            {
+                e1.printStackTrace();
+            }
+        });
 
         setPathBtn.addActionListener(e ->
         {
             try
             {
-                iToolbarListener.openFolder();
+                IKToolbar.openFolder();
             } catch (IOException e1)
             {
                 e1.printStackTrace();
@@ -70,21 +78,13 @@ public class ToolbarView extends JPanel
         {
             try
             {
-                iToolbarListener.geolocate();
+                IKToolbar.geolocate();
             } catch (TikaException | IOException | SAXException e1)
             {
                 e1.printStackTrace();
             }
         });
 
-
-//        previousImgBtn.setName("previousImgBtn");
-//        setPathBtn.setName("setPathBtn");
-//        syncBtn.setName("syncBtn");
-//        exifDataBtn.setName("exifDataBtn");
-//        geolocateBtn.setName("geolocateBtn");
-//        galleryBtn.setName("galleryBtn");
-//        nextImgBtn.setName("nextImgBtn");
 
         add(setPathBtn);
         add(galleryBtn);
@@ -93,13 +93,14 @@ public class ToolbarView extends JPanel
         add(geolocateBtn);
         add(printImgBtn);
         add(syncBtn);
+        add(exifDataBtn);
 
 
     }
 
-    public void setiToolbarListener(IToolbarListener iToolbarListener)
+    public void setIKToolbar(IKToolbar IKToolbar)
     {
-        this.iToolbarListener = iToolbarListener;
+        this.IKToolbar = IKToolbar;
     }
 
 }

@@ -12,16 +12,17 @@ import static gr.teicm.koala.Enums.ThumbnailSize.HUGE;
 public class ImageManipulationService
 {
 
-    public Image makeThumbnail(ImageIcon image) throws IOException
+    public ImageIcon makeThumbnail(ImageIcon image) throws IOException
     {
         Image imageTemp = image.getImage();
         BufferedImage buffered;
         buffered = (BufferedImage) imageTemp;
 
-        return Thumbnails.of(buffered)
+        return new ImageIcon(Thumbnails.of(buffered)
                 .size(HUGE.getValue(),
                         HUGE.getValue())
-                .asBufferedImage();
+                .asBufferedImage());
+
     }
 
     public ImageIcon imageZoom(ImageIcon imageIcon, int zoomLevel)

@@ -1,9 +1,8 @@
 package gr.teicm.koala.controllers;
 
-import gr.teicm.koala.Interfaces.IMenuBarListener;
-import gr.teicm.koala.views.MenuBarView;
+import gr.teicm.koala.views.IKMenuBar;
 
-public class MenuBarController extends MenuBarView implements IMenuBarListener
+public class MenuBarController implements IKMenuBar
 {
 
 }

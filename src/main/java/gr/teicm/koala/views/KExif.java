@@ -3,7 +3,7 @@ package gr.teicm.koala.views;
 import javax.swing.*;
 import java.awt.*;
 
-public class ExifView extends JFrame
+public class KExif extends JFrame
 {
     private JLabel userId;
     private JLabel imageName;
@@ -20,7 +20,7 @@ public class ExifView extends JFrame
     private JLabel dpi;
     private GridLayout layout;
 
-    public ExifView()
+    public KExif()
     {
         initComponents();
         setTitle("EXIF Data");

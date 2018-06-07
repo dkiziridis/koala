@@ -2,35 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6195e838-fde7-4615-95eb-fc9617a3f7e4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Enums/Users.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IMenuBarListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/ISingleImageListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IThumbnailPanelListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ExifController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/MenuBarController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ThumbnailController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/GeolocateService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/MessageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/MetadataRetrieverService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/PrintImageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/PushImageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/StaticGeolocationView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tika_tika_parser_1_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/IKPhoto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KThumbnail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_adobe_xmp_xmpcore_5_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_drewnoakes_metadata_extractor_2_11_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tika_tika_core_1_17.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tika_tika_core_1_14.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/koala.iml" beforeDir="false" afterPath="$PROJECT_DIR$/koala.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IAppStateObserver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IThumbPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IToolbarListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IThumbnailListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IThumbnailListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/ThumbnailSize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Enums/ThumbnailSize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IMenuBarListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/IKMenuBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/ISingleImageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/IExif.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IThumbnailListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/IKThumbnail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IThumbnailPanelListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IToolbarListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/IKToolbar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ThumbnailPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ThumbnailPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/FetchImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/PullImageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/IOServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/IOServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/MenuBarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/MenuBarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ThumbnailController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ThumbnailPanelController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/models/LocalImageCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/models/LocalImageCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/GeolocateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/GeolocateService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/ImageManipulationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/ImageManipulationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/GeolocateView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/ThumbnailView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/ThumbnailView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/ToolbarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/ToolbarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/ExifView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KExif.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/GalleryView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/MenuBarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KMenuBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/SingleImageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KPhoto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/StaticGeolocationView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KStaticGeolocation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/ThumbnailView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/ToolbarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KToolbar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/teicm/koala/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/teicm/koala/App.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -93,32 +95,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="ThumbnailPanelController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ThumbnailPanelController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="131" column="5" lean-forward="true" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LocalImageCollection.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/models/LocalImageCollection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="24" column="48" lean-forward="true" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="74" column="13" lean-forward="true" selection-start-line="69" selection-start-column="11" selection-end-line="74" selection-end-column="13" />
+            <state relative-caret-position="79">
+              <caret line="57" column="17" lean-forward="true" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,17 +107,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ISingleImageListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/ISingleImageListener.java">
+      <file leaf-file-name="MenuBarController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/MenuBarController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+            <state relative-caret-position="120">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IThumbnailListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IThumbnailListener.java">
+      <file leaf-file-name="ExifController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ExifController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IKPhoto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/IKPhoto.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="40">
               <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
@@ -144,50 +134,50 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IThumbnailPanelListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IThumbnailPanelListener.java">
+      <file leaf-file-name="IKThumbnail.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/IKThumbnail.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+            <state relative-caret-position="40">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IMenuBarListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IMenuBarListener.java">
+      <file leaf-file-name="KToolbar.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KToolbar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="719">
+              <caret line="106" selection-start-line="106" selection-end-line="106" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ToolbarView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/ToolbarView.java">
+      <file leaf-file-name="KThumbnail.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KThumbnail.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
+            <state relative-caret-position="260">
+              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IToolbarListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IToolbarListener.java">
+      <file leaf-file-name="KStaticGeolocation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KStaticGeolocation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+            <state relative-caret-position="739">
+              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IKToolbar.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/IKToolbar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/App.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -197,8 +187,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -208,6 +198,7 @@
       <find>long</find>
       <find>longitude</find>
       <find>longtitude</find>
+      <find>tika</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -223,31 +214,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/models/HibernateImage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IGalleryListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/App.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/ExifView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ToolBarViewController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IServiceListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/SetPathService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/AppState.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/AppStateService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/IAppStateService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IAppStateService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IAppStateObserver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/ResizeImageService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/ScaledImageLabel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/MenuBar.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/GalleryView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IThumbPanelController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/ImageManipulationService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ThumbnailPanelInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ThumbnailPanelListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ThumbnailViewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ExifViewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IGeolocateListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/IOServices.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/MenuBarController.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IMenuBarListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/MenuBarView.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IThumbPanelListener.java" />
@@ -255,25 +226,45 @@
         <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/SingleImageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/ThumbnailPanelView.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ThumbnailPanelView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/ThumbnailView.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/StaticGeolocate.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/PrintImg.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/PrintImageService.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/StaticGeolocationView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ThumbnailController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/SingleImageView.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/MetadataRetrieverService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/MessageService.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/PushImageService.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IThumbnailListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Enums/Users.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/GeolocateService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/models/LocalImageCollection.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ThumbnailPanelController.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IToolbarListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/Controller.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/MessageService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/PrintImageService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ThumbnailController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KoalaViewContainer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/ImageManipulationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/GalleryView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/Koala.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ThumbnailPanelController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IToolbar.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/KoalaController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/Koala.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/ToolbarView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/SingleImageView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/ThumbnailPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/ThumbnailView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/Thumbnail.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/MainPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/MenuBarController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/models/LocalImageCollection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IExifData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IExif.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IThumbnailPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/IKToolbar.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KThumbnail.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KStaticGeolocation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/Controller.java" />
       </list>
     </option>
   </component>
@@ -302,7 +293,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="944" />
+    <option name="x" value="191" />
     <option name="width" value="960" />
     <option name="height" value="1049" />
   </component>
@@ -314,7 +305,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -382,15 +372,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="koala" type="462c0819:PsiDirectoryNode" />
-              <item name="Interfaces" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="koala" type="b2602c69:ProjectViewProjectNode" />
-              <item name="koala" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="koala" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -411,12 +392,20 @@
               <item name="koala" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="koala" type="b2602c69:ProjectViewProjectNode" />
+              <item name="koala" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -460,7 +449,7 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="gr.teicm.koala.Interfaces.*" />
+          <option name="PATTERN" value="gr.teicm.koala.views.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -604,6 +593,13 @@
       <workItem from="1527754476971" duration="12326000" />
       <workItem from="1527767276114" duration="2659000" />
       <workItem from="1527774440267" duration="48840000" />
+      <workItem from="1527849012295" duration="4224000" />
+      <workItem from="1527856287987" duration="1005000" />
+      <workItem from="1527914887432" duration="436000" />
+      <workItem from="1527915358432" duration="3231000" />
+      <workItem from="1528042673686" duration="90000" />
+      <workItem from="1528124293738" duration="1387000" />
+      <workItem from="1528130216870" duration="63024000" />
     </task>
     <task id="LOCAL-00001" summary="second commit">
       <created>1522277891284</created>
@@ -766,11 +762,32 @@
       <option name="project" value="LOCAL" />
       <updated>1527802151222</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Alpha 0.1 release, most major features have been implemented. &#10;TODO: Bug fixing.">
+      <created>1527849106778</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1527849106779</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Bugfix: PrintService didn't notify user of unavailable printers.">
+      <created>1527855567968</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1527855567968</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Bugfix: PrintService didn't notify user of unavailable printers.">
+      <created>1527855594312</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1527855594312</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="328578000" />
+    <option name="totallyTimeSpent" value="401975000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -782,10 +799,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1049" extended-state="6" />
+    <frame x="-1" y="0" width="1922" height="1054" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5026795" side_tool="true" weight="0.26936027" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5026795" side_tool="true" weight="0.26867336" />
       <window_info anchor="right" id="Maven Projects" order="4" weight="0.3290461" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info id="Capture Tool" order="2" />
@@ -794,25 +812,25 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39730638" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39687848" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49932885" weight="0.3286517" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32659933" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32552955" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" sideWeight="0.49798658" weight="0.2738764" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3286517" />
-      <window_info anchor="bottom" auto_hide="true" x="23" y="300" width="1490" height="233" id="Run" order="2" sideWeight="0.49732047" weight="0.33782268" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.329582" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32772166" />
+      <window_info anchor="bottom" auto_hide="true" x="23" y="300" width="1490" height="233" id="Run" order="2" sideWeight="0.49732047" weight="0.3322185" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3286517" />
       <window_info id="Persistence" order="2" sideWeight="0.5014045" side_tool="true" weight="0.22214764" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49438202" visible="true" weight="0.2266881" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49438202" visible="true" weight="0.24330118" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32772166" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="2" sideWeight="0.505618" side_tool="true" weight="0.21677852" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.329582" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
@@ -852,6 +870,9 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="UpdateCopyrightCheckinHandler">
+    <option name="UPDATE_COPYRIGHT" value="true" />
+  </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
       <list>
@@ -888,7 +909,9 @@
     <MESSAGE value="ThumbnailPanelController complete rewrite" />
     <MESSAGE value="More Class rewrites" />
     <MESSAGE value="Geolocate incoming" />
-    <option name="LAST_COMMIT_MESSAGE" value="Geolocate incoming" />
+    <MESSAGE value="Alpha 0.1 release, most major features have been implemented. &#10;TODO: Bug fixing." />
+    <MESSAGE value="Bugfix: PrintService didn't notify user of unavailable printers." />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix: PrintService didn't notify user of unavailable printers." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -897,7 +920,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="57" />
+      <option name="time" value="78" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -910,19 +933,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_161/src.zip!/java/lang/Object.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/IGalleryListener.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/GalleryView.java" />
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_161/src.zip!/javax/swing/plaf/ComponentUI.java" />
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_161/src.zip!/java/awt/event/MouseAdapter.java" />
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_161/src.zip!/java/awt/event/ActionListener.java" />
-    <entry file="jrt:///usr/lib/jvm/default-java!/java.base/java/lang/Runnable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ToolBarViewController.java" />
     <entry file="jrt:///usr/lib/jvm/default-java!/java.desktop/javax/swing/AbstractButton.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -938,10 +948,153 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IAppStateObserver.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IAppStateObserver.java" />
+    <entry file="jrt:///usr/lib/jvm/default-java!/java.base/java/lang/Override.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IGeolocateListener.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/SingleImageController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/GeolocateView.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/models/HibernateImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/default-java!/java.base/java/io/File.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/PullImageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/MessageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="63" selection-start-line="17" selection-start-column="63" selection-end-line="17" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/PrintImageService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/default-java!/java.desktop/java/awt/Container.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="434" lean-forward="true" selection-start-line="434" selection-end-line="434" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/default-java!/java.desktop/javax/swing/JPanel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KExif.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/PushImageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/GalleryView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ThumbnailController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/KThumbnail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ThumbnailPanelController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KoalaViewContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/HibernateUtilService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/IOServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-221">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/MetadataRetrieverService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="68" column="50" selection-start-line="68" selection-start-column="50" selection-end-line="68" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/GeolocateService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/CustomComponents/ScaledImageLabel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -952,57 +1105,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="jrt:///usr/lib/jvm/default-java!/java.base/java/lang/Override.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/Enums/Users.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        <state relative-caret-position="320">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#259#260#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ThumbnailPanelController.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IGeolocateListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KMenuBar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/SingleImageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="20">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/GeolocateView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="933">
-          <caret line="54" column="45" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
+        <state relative-caret-position="307">
+          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/Enums/Users.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="340">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
-            <element signature="e#362#363#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#419#420#0" expanded="true" />
-            <element signature="e#445#446#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/ImageManipulationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
         </state>
       </provider>
     </entry>
@@ -1013,20 +1156,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ThumbnailController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/models/LocalImageCollection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-167">
-          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+        <state relative-caret-position="-660">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#803#804#0" expanded="true" />
+            <element signature="e#841#842#0" expanded="true" />
+            <element signature="e#1578#1579#0" expanded="true" />
+            <element signature="e#1648#1649#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KPhoto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/MenuBarController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        <state relative-caret-position="560">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#635#636#0" expanded="true" />
+            <element signature="e#664#665#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IThumbnailPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/IExif.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/IKMenuBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/IKPhoto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/IKThumbnail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/IKToolbar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1040,243 +1251,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/CustomComponents/ScaledImageLabel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/MenuBarController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/models/HibernateImage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KToolbar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        <state relative-caret-position="719">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/GeolocateService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/HibernateUtilService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/ImageManipulationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/IOServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/MessageService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KThumbnail.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/MetadataRetrieverService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="68" column="50" selection-start-line="68" selection-start-column="50" selection-end-line="68" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/image.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/PrintImageService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/KStaticGeolocation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/PullImageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/services/PushImageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/ExifView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/GalleryView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/MenuBarView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/SingleImageView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="821">
-          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/StaticGeolocationView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="41" column="58" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/ThumbnailView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#526#527#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jrt:///usr/lib/jvm/default-java!/java.base/java/io/File.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/models/LocalImageCollection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="24" column="48" lean-forward="true" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/views/ToolbarView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/ThumbnailPanelController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="131" column="5" lean-forward="true" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IMenuBarListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/ISingleImageListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IThumbnailListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IThumbnailPanelListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/Interfaces/IToolbarListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="739">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/teicm/koala/controllers/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="74" column="13" lean-forward="true" selection-start-line="69" selection-start-column="11" selection-end-line="74" selection-end-column="13" />
+        <state relative-caret-position="79">
+          <caret line="57" column="17" lean-forward="true" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

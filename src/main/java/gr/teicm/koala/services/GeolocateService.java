@@ -1,6 +1,6 @@
 package gr.teicm.koala.services;
 
-import gr.teicm.koala.views.StaticGeolocationView;
+import gr.teicm.koala.views.KStaticGeolocation;
 import org.apache.tika.exception.TikaException;
 import org.xml.sax.SAXException;
 
@@ -20,7 +20,7 @@ public class GeolocateService
 
         if (latitude > 0 & longitude > 0)
         {
-            new StaticGeolocationView(longitude, latitude);
+            new KStaticGeolocation(longitude, latitude);
 
         } else
         {
