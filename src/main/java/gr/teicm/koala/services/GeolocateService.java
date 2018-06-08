@@ -18,13 +18,13 @@ public class GeolocateService
         longitude = Double.parseDouble(retrieverService.getLongitude());
         latitude = Double.parseDouble(retrieverService.getLatitude());
 
-        if (latitude > 0 & longitude > 0)
+        if (latitude == 0 & longitude == 0)
         {
-            new KStaticGeolocation(longitude, latitude);
+            new MessageService().latLongErrorMessage(path);
 
         } else
         {
-            new MessageService().latLongErrorMessage(path);
+            new KStaticGeolocation(longitude, latitude);
         }
 
     }

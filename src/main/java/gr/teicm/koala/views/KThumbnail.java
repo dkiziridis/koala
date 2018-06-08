@@ -1,8 +1,12 @@
 package gr.teicm.koala.views;
 
 
+import org.apache.tika.exception.TikaException;
+import org.xml.sax.SAXException;
+
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 
 public class KThumbnail
@@ -18,11 +22,20 @@ public class KThumbnail
     public KThumbnail(ImageIcon image)
     {
         initComponents();
-        imgPath = image.getDescription();
+        this.imgPath = image.getDescription();
         imageThumbnail.setIcon(image);
 
         checkBox.addActionListener(e -> IKThumbnail.selectedImage());
-        exifBtn.addActionListener(e -> IKThumbnail.viewEXIF());
+        exifBtn.addActionListener(e ->
+        {
+            try
+            {
+                IKThumbnail.viewEXIF();
+            } catch (TikaException | IOException | SAXException e1)
+            {
+                e1.printStackTrace();
+            }
+        });
 
         thumbnailPane.add(exifBtn, BorderLayout.SOUTH);
         thumbnailPane.add(checkBox, BorderLayout.NORTH);
@@ -67,5 +80,10 @@ public class KThumbnail
     public void setIKThumbnail(gr.teicm.koala.views.IKThumbnail IKThumbnail)
     {
         this.IKThumbnail = IKThumbnail;
+    }
+
+    public void setImgPath(String path)
+    {
+        this.imgPath = path;
     }
 }

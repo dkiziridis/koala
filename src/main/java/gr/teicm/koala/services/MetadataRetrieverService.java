@@ -82,62 +82,44 @@ public class MetadataRetrieverService
         ParseContext context = new ParseContext();
 
         parser.parse(inputStream, handler, metadata, context);
-        //System.out.println(handler.toString());//DEBUG
 
-        //getting the list of all meta data elements
         String[] metadataNames = metadata.names();
 
         for (String tag : metadataNames)
         {
-            //System.out.println(tag + ": " + metadata.get(tag));
-
-
             switch (tag)
             {
                 case "File Name":
-                    //System.out.println(tag + ": " + metadata.get(tag));
                     imageName = metadata.get(tag);
                     break;
 
                 case "Image Height":
-                    //System.out.println(tag + ": " + metadata.get(tag));
                     height = String.valueOf(metadata.get(tag));
                     break;
 
                 case "Image Width":
-                    //System.out.println(tag + ": " + metadata.get(tag));
                     width = String.valueOf(metadata.get(tag));
                     break;
 
                 case "Content-Type":
-                    //System.out.println(tag + ": " + metadata.get(tag));
                     type = metadata.get(tag);
                     break;
 
                 case "File Modified Date":
-                    //System.out.println(tag + ": " + metadata.get(tag));
                     date = metadata.get(tag);
                     break;
 
                 case "geo:lat":
-                    //System.out.println(metadata.get(tag));
                     latitude = metadata.get(tag);
                     break;
 
                 case "geo:long":
-                    // System.out.println(metadata.get(tag));
                     longitude = metadata.get(tag);
                     break;
 
                 case "File Size":
-                    // System.out.println(metadata.get(tag));
                     fileSize = String.valueOf(metadata.get(tag));
                     break;
-
-//                case "File Modified Date":
-//                    System.out.println(metadata.get(tag));
-//                    fileModifiedDatte = String.valueOf(metadata.get(tag))
-
                 default:
                     break;
 
@@ -145,5 +127,6 @@ public class MetadataRetrieverService
             }
 
         }
+
     }
 }

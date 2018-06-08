@@ -92,8 +92,8 @@ public class Controller
                         metadata.getLongitude(),
                         metadata.getContentType(),
                         metadata.getFileSize(),
-                        metadata.getDate());
-
+                        metadata.getDate()
+                );
             }
         });
 
@@ -121,6 +121,7 @@ public class Controller
         for (ImageIcon image : collection.getImageCollection())
         {
             KThumbnail kThumbnail = new KThumbnail(imageManipulationService.makeThumbnail(image));
+            kThumbnail.setImgPath(image.getDescription());
             kThumbnail.imageThumbnail.addMouseListener(new MouseAdapter()
             {
                 @Override
@@ -155,9 +156,19 @@ public class Controller
                 }
 
                 @Override
-                public void viewEXIF()
+                public void viewEXIF() throws TikaException, IOException, SAXException
                 {
-                    System.out.println("adsadas");
+                    MetadataRetrieverService metadata = new MetadataRetrieverService(image.getDescription());
+
+                    new KExif(metadata.getHeight(),
+                            metadata.getWidth(),
+                            metadata.getCompressionType(),
+                            metadata.getLatitude(),
+                            metadata.getLongitude(),
+                            metadata.getContentType(),
+                            metadata.getFileSize(),
+                            metadata.getDate()
+                    );
                 }
             });
 

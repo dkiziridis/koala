@@ -1,7 +1,6 @@
 package gr.teicm.koala.views;
 
 import javax.swing.*;
-import java.awt.*;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,7 +16,7 @@ public class KStaticGeolocation
     {
         JFrame staticGeoLoc = new JFrame("Image Geolocation");
         String markerColor = "red";
-        String zoom = "10";
+        String zoom = "4";
         String mapSize = "800x600";
 
         try
@@ -36,7 +35,7 @@ public class KStaticGeolocation
                     + longitude + ","
                     + latitude;
 
-            String destinationFile = "image.jpg";
+            String destinationFile = "map.jpg";
             URL url = new URL(imageUrl);
             InputStream is = url.openStream();
             OutputStream os = new FileOutputStream(destinationFile);
@@ -57,14 +56,14 @@ public class KStaticGeolocation
             System.exit(1);
         }
 
+//
+//        JLabel map = new JLabel((Icon) new ImageIcon("map.jpg")
+//                .getImage()
+//                .getScaledInstance(800, 800, Image.SCALE_SMOOTH));
+//
+//        staticGeoLoc.add(map);
 
-        JLabel map = new JLabel((Icon) new ImageIcon("map.jpg")
-                .getImage()
-                .getScaledInstance(800, 800, Image.SCALE_SMOOTH));
-
-        staticGeoLoc.add(map);
-
-//        staticGeoLoc.add(new JLabel(new ImageIcon((new ImageIcon("image.jpg")).getImage().getScaledInstance(630, 600, java.awt.Image.SCALE_SMOOTH))));
+        staticGeoLoc.add(new JLabel(new ImageIcon((new ImageIcon("map.jpg")).getImage().getScaledInstance(630, 600, java.awt.Image.SCALE_SMOOTH))));
 
         staticGeoLoc.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         staticGeoLoc.pack();
