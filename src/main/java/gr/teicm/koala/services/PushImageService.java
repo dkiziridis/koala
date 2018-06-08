@@ -44,11 +44,11 @@ public class PushImageService
         hibernateImage.setFileSize((int) imageFile.length());
         hibernateImage.setLatitude(latitude);
         hibernateImage.setLongitude(longitude);
-        hibernateImage.setCameraBrand("TODO");
-        hibernateImage.setCameraModel("TODO LATER");
-        hibernateImage.setDate(new Timestamp(2001 - 24 - 2));
-        hibernateImage.setMegapixels(5); //TODO
-        hibernateImage.setDpi((short) 70); //TODO
+        hibernateImage.setCameraBrand(null);
+        hibernateImage.setCameraModel(null);
+        hibernateImage.setDate(Timestamp.valueOf(metadataRetrieverService.getDate()));
+        hibernateImage.setMegapixels(null);
+        hibernateImage.setDpi(null);
 
         session.save(hibernateImage);
         tx.commit();

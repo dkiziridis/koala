@@ -61,6 +61,7 @@ public class MetadataRetrieverService
 
     public String getDate()
     {
+
         return date;
     }
 
