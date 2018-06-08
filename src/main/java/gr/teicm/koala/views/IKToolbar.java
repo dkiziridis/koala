@@ -21,4 +21,8 @@ public interface IKToolbar
     void printImage() throws IOException, PrintException;
 
     void exifService() throws TikaException, IOException, SAXException;
+
+    void makeAlbum();
+
+    void sync() throws TikaException, IOException, SAXException;
 }

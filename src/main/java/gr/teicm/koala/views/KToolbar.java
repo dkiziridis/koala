@@ -13,6 +13,7 @@ public class KToolbar extends JPanel
 {
 
     private static final Path Path = null;
+    private final JButton makeAlbumBtn;
     private JButton setPathBtn;
     private JButton syncBtn;
     private JButton exifDataBtn;
@@ -36,7 +37,20 @@ public class KToolbar extends JPanel
         geolocateBtn = new JButton("Geolocate");
         galleryBtn = new JButton("Gallery");
         printImgBtn = new JButton("Print");
+        makeAlbumBtn = new JButton("Create Album");
 
+        syncBtn.addActionListener(e ->
+        {
+
+            try
+            {
+                IKToolbar.sync();
+            } catch (TikaException | IOException | SAXException e1)
+            {
+                e1.printStackTrace();
+            }
+
+        });
         printImgBtn.addActionListener(e ->
         {
             try
@@ -90,18 +104,13 @@ public class KToolbar extends JPanel
             try
             {
                 IKToolbar.exifService();
-            } catch (TikaException e1)
-            {
-                e1.printStackTrace();
-            } catch (IOException e1)
-            {
-                e1.printStackTrace();
-            } catch (SAXException e1)
+            } catch (TikaException | IOException | SAXException e1)
             {
                 e1.printStackTrace();
             }
         });
 
+        makeAlbumBtn.addActionListener(e -> IKToolbar.makeAlbum());
 
 
         add(setPathBtn);
@@ -112,6 +121,7 @@ public class KToolbar extends JPanel
         add(printImgBtn);
         add(syncBtn);
         add(exifDataBtn);
+        add(makeAlbumBtn);
 
 
     }
@@ -120,6 +130,7 @@ public class KToolbar extends JPanel
     {
         setPathBtn.setVisible(bool);
         syncBtn.setVisible(bool);
+
     }
 
 

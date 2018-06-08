@@ -19,4 +19,12 @@ public class Message
                 "Print Services Error!",
                 JOptionPane.ERROR_MESSAGE);
     }
+
+    public void accessDenied()
+    {
+        JOptionPane.showMessageDialog(null,
+                "Access denied",
+                "Cannot write here!",
+                JOptionPane.ERROR_MESSAGE);
+    }
 }

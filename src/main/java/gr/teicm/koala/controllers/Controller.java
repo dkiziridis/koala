@@ -1,10 +1,8 @@
 package gr.teicm.koala.controllers;
 
+import gr.teicm.koala.models.HibernateImage;
 import gr.teicm.koala.models.LocalImageCollection;
-import gr.teicm.koala.services.Geolocate;
-import gr.teicm.koala.services.ImageManipulation;
-import gr.teicm.koala.services.MetadataRetriever;
-import gr.teicm.koala.services.PrintImage;
+import gr.teicm.koala.services.*;
 import gr.teicm.koala.views.*;
 import org.apache.tika.exception.TikaException;
 import org.xml.sax.SAXException;
@@ -15,12 +13,16 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Controller
 {
     private LocalImageCollection collection;
     private KPanel kPanel;
     private KToolbar kToolbar = new KToolbar();
+    private HibernateImage[] hibernateImages;
+    private List<String> imagePaths = new LinkedList<>();
 
 
     public Controller(LocalImageCollection collection, KPanel kPanel) throws IOException
@@ -95,6 +97,21 @@ public class Controller
                         metadata.getDate()
                 );
             }
+
+            @Override
+            public void makeAlbum()
+            {
+                IOServices io = new IOServices();
+                io.printToFile(imagePaths);
+            }
+
+            @Override
+            public void sync() throws TikaException, IOException, SAXException
+            {
+                Sync sync = new Sync();
+                sync.setLocalImageCollection(collection);
+                sync.sync();
+            }
         });
 
         kToolbar.addMouseWheelListener(mouseWheelEvent ->
@@ -152,7 +169,13 @@ public class Controller
                 @Override
                 public void selectedImage()
                 {
-                    System.out.println("lalal");
+                    if (imagePaths.contains(image.getDescription()))
+                    {
+                        System.out.println("Image exists in imagePaths");
+                    } else
+                    {
+                        imagePaths.add(image.getDescription());
+                    }
                 }
 
                 @Override

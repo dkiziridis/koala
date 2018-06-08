@@ -2,8 +2,12 @@ package gr.teicm.koala.services;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.Path;
+import java.util.List;
 
 public class IOServices
 {
@@ -53,5 +57,27 @@ public class IOServices
             path = new File(System.getProperty("getUser.home"));
             return path.toPath();
         }
+    }
+
+    public void printToFile(List<String> imagePaths)
+    {
+        try (BufferedWriter write = new BufferedWriter(new FileWriter(openFolder().toFile())))
+        {
+            for (String str : imagePaths)
+            {
+
+                write.write(str);
+                write.newLine();
+            }
+        } catch (IOException e)
+        {
+            new Message().accessDenied();
+            e.printStackTrace();
+        }
+    }
+
+    public void ReadFromFile()
+    {
+        File txt = new File("");
     }
 }
