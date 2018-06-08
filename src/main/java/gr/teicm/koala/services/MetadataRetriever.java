@@ -12,7 +12,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class MetadataRetrieverService
+public class MetadataRetriever
 {
     private String latitude;
     private String longitude;
@@ -70,7 +70,7 @@ public class MetadataRetrieverService
         return imageName;
     }
 
-    public MetadataRetrieverService(String path) throws IOException, TikaException, SAXException
+    public MetadataRetriever(String path) throws IOException, TikaException, SAXException
     {
         File file = new File(path);
 

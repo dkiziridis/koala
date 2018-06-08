@@ -1,6 +1,6 @@
 package gr.teicm.koala.CustomComponents;
 
-import gr.teicm.koala.services.ImageManipulationService;
+import gr.teicm.koala.services.ImageManipulation;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,7 +13,7 @@ public class ScaledImageLabel extends JLabel
         ImageIcon icon = (ImageIcon) getIcon();
         if (icon != null)
         {
-            ImageManipulationService.drawScaledImage(icon.getImage(), this, g);
+            ImageManipulation.drawScaledImage(icon.getImage(), this, g);
         }
     }
 }

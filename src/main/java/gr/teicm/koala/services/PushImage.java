@@ -15,21 +15,21 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.Timestamp;
 
-public class PushImageService
+public class PushImage
 {
-    public PushImageService(HibernateImage hibernateImage, String pathToImage) throws IOException, TikaException, SAXException
+    public PushImage(HibernateImage hibernateImage, String pathToImage) throws IOException, TikaException, SAXException
     {
         File imageFile = new File(pathToImage);
         Image image = ImageIO.read(imageFile);
 
 
-        Session session = HibernateUtilService.getSession();
+        Session session = HibernateUtil.getSession();
         Transaction tx = session.beginTransaction();
 
         double latitude;
         double longitude;
 
-        MetadataRetrieverService metadataRetrieverService = new MetadataRetrieverService(pathToImage);
+        MetadataRetriever metadataRetrieverService = new MetadataRetriever(pathToImage);
 
         latitude = Double.parseDouble(metadataRetrieverService.getLatitude());
         longitude = Double.parseDouble(metadataRetrieverService.getLongitude());

@@ -14,10 +14,9 @@ public class KMenuBar extends JMenuBar
     private final JMenuItem fileClose;
     private final JMenuItem fileExit;
     private final JMenuItem fileSave;
-    private final JMenuItem editUndo;
-    private final JMenuItem editRedo;
     private final JMenuItem helpAbout;
-    private final JMenuItem optionsChangeBorder;
+    private final JMenuItem optionsChangeBackground;
+    IKMenuBar ikMenuBar;
 
     public KMenuBar()
     {
@@ -31,10 +30,8 @@ public class KMenuBar extends JMenuBar
         fileClose = new JMenuItem("Close");
         fileSave = new JMenuItem("Save");
         fileExit = new JMenuItem("Exit");
-        editUndo = new JMenuItem("Undo");
-        editRedo = new JMenuItem("Redo");
         helpAbout = new JMenuItem("About");
-        optionsChangeBorder = new JMenuItem("Matrix");
+        optionsChangeBackground = new JMenuItem("Dark Background");
 
         add(file);
         add(edit);
@@ -45,14 +42,12 @@ public class KMenuBar extends JMenuBar
         file.add(fileSave);
         file.add(fileClose);
         file.add(fileExit);
-        edit.add(editUndo);
-        edit.add(editRedo);
         help.add(helpAbout);
-        options.add(optionsChangeBorder);
+        options.add(optionsChangeBackground);
 
         helpAbout.addActionListener(actionEvent ->
         {
-
+            ikMenuBar.showAbout();
         });
         fileSave.addActionListener(actionEvent ->
         {
@@ -70,11 +65,15 @@ public class KMenuBar extends JMenuBar
         {
 
         });
-        optionsChangeBorder.addActionListener(actionEvent ->
+        optionsChangeBackground.addActionListener(actionEvent ->
         {
-
+            ikMenuBar.changeBackground();
         });
     }
 
+    public void setIkMenuBar(IKMenuBar ikMenuBar)
+    {
+        this.ikMenuBar = ikMenuBar;
+    }
 
 }

@@ -2,7 +2,7 @@ package gr.teicm.koala.services;
 
 import javax.swing.*;
 
-public class MessageService
+public class Message
 {
     public void latLongErrorMessage(String string)
     {

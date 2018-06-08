@@ -9,7 +9,7 @@ import java.io.IOException;
 
 import static gr.teicm.koala.Enums.ThumbnailSize.HUGE;
 
-public class ImageManipulationService
+public class ImageManipulation
 {
 
     public ImageIcon makeThumbnail(ImageIcon image) throws IOException

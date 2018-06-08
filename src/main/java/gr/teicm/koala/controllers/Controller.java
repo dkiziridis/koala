@@ -1,10 +1,10 @@
 package gr.teicm.koala.controllers;
 
 import gr.teicm.koala.models.LocalImageCollection;
-import gr.teicm.koala.services.GeolocateService;
-import gr.teicm.koala.services.ImageManipulationService;
-import gr.teicm.koala.services.MetadataRetrieverService;
-import gr.teicm.koala.services.PrintImageService;
+import gr.teicm.koala.services.Geolocate;
+import gr.teicm.koala.services.ImageManipulation;
+import gr.teicm.koala.services.MetadataRetriever;
+import gr.teicm.koala.services.PrintImage;
 import gr.teicm.koala.views.*;
 import org.apache.tika.exception.TikaException;
 import org.xml.sax.SAXException;
@@ -55,7 +55,7 @@ public class Controller
             @Override
             public void geolocate() throws TikaException, IOException, SAXException
             {
-                new GeolocateService(collection.pathToImage());
+                new Geolocate(collection.pathToImage());
             }
 
             @Override
@@ -77,13 +77,13 @@ public class Controller
             {
                 FileInputStream file;
                 file = new FileInputStream(collection.pathToImage());
-                new PrintImageService(file);
+                new PrintImage(file);
             }
 
             @Override
             public void exifService() throws TikaException, IOException, SAXException
             {
-                MetadataRetrieverService metadata = new MetadataRetrieverService(collection.pathToImage());
+                MetadataRetriever metadata = new MetadataRetriever(collection.pathToImage());
 
                 new KExif(metadata.getHeight(),
                         metadata.getWidth(),
@@ -117,10 +117,10 @@ public class Controller
 
     private void initKPanel() throws IOException
     {
-        ImageManipulationService imageManipulationService = new ImageManipulationService();
+        ImageManipulation imageManipulation = new ImageManipulation();
         for (ImageIcon image : collection.getImageCollection())
         {
-            KThumbnail kThumbnail = new KThumbnail(imageManipulationService.makeThumbnail(image));
+            KThumbnail kThumbnail = new KThumbnail(imageManipulation.makeThumbnail(image));
             kThumbnail.setImgPath(image.getDescription());
             kThumbnail.imageThumbnail.addMouseListener(new MouseAdapter()
             {
@@ -158,7 +158,7 @@ public class Controller
                 @Override
                 public void viewEXIF() throws TikaException, IOException, SAXException
                 {
-                    MetadataRetrieverService metadata = new MetadataRetrieverService(image.getDescription());
+                    MetadataRetriever metadata = new MetadataRetriever(image.getDescription());
 
                     new KExif(metadata.getHeight(),
                             metadata.getWidth(),

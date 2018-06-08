@@ -6,21 +6,21 @@ import org.xml.sax.SAXException;
 
 import java.io.IOException;
 
-public class GeolocateService
+public class Geolocate
 {
-    public GeolocateService(String path) throws TikaException, IOException, SAXException
+    public Geolocate(String path) throws TikaException, IOException, SAXException
     {
-        MetadataRetrieverService retrieverService;
+        MetadataRetriever retrieverService;
         double longitude;
         double latitude;
 
-        retrieverService = new MetadataRetrieverService(path);
+        retrieverService = new MetadataRetriever(path);
         longitude = Double.parseDouble(retrieverService.getLongitude());
         latitude = Double.parseDouble(retrieverService.getLatitude());
 
         if (latitude == 0 & longitude == 0)
         {
-            new MessageService().latLongErrorMessage(path);
+            new Message().latLongErrorMessage(path);
 
         } else
         {

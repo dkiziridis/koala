@@ -57,23 +57,14 @@ public class KPhoto
 
     }
 
-    public String getImagePath()
+    public void setDarkBG()
     {
-        return imagePath;
+        imagePanel.setBackground(Color.black);
     }
 
-//    @Override
-//    public void mouseWheelMoved(MouseWheelEvent mouseWheelEvent)
-//    {
-//        if (mouseWheelEvent.getWheelRotation() > 0)
-//        {
-//            ImageManipulationService imageManipulationService = new ImageManipulationService();
-//            //TEST TODO
-////            labelImage.setIcon();
-//            labelImage.setIcon(imageManipulationService.imageZoom(imageIcon, 10));
-//            revalidate();
-//            repaint();
-//            System.out.println("MouseWheel value = " + mouseWheelEvent);
-//        }
-//    }
+    public void setImageIcon(ImageIcon imageIcon)
+    {
+        this.imageIcon = imageIcon;
+        imagePanel.updateUI();
+    }
 }
