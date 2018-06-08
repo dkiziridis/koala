@@ -2,20 +2,22 @@ package gr.teicm.koala.models;
 
 import gr.teicm.koala.services.IOServices;
 
-import java.util.LinkedList;
 import java.util.List;
 
 public class Album
 {
     private List<String> album;
-    private String savePath;
 
-    public Album()
+    public Album(List<String> album)
     {
-        savePath = new IOServices().openFolder().toString();
-        album = new LinkedList<>();
+        this.album = album;
+        new IOServices().printToFile(album);
     }
 
+    public List<String> getAlbum()
+    {
+        return album;
+    }
 
     public void addImageToAlbum(String path)
     {

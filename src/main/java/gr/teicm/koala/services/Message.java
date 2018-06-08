@@ -2,9 +2,9 @@ package gr.teicm.koala.services;
 
 import javax.swing.*;
 
-public class Message
+class Message
 {
-    public void latLongErrorMessage(String string)
+    void latLongErrorMessage(String string)
     {
         JOptionPane.showMessageDialog(null,
                 "No Lat/Long data available for this image. :\n" + string,
@@ -12,7 +12,7 @@ public class Message
                 JOptionPane.ERROR_MESSAGE);
     }
 
-    public void noPrinterService()
+    void noPrinterService()
     {
         JOptionPane.showMessageDialog(null,
                 "No Printer services available on this machine",
@@ -20,11 +20,19 @@ public class Message
                 JOptionPane.ERROR_MESSAGE);
     }
 
-    public void accessDenied()
+    void accessDenied()
     {
         JOptionPane.showMessageDialog(null,
                 "Access denied",
                 "Cannot write here!",
+                JOptionPane.ERROR_MESSAGE);
+    }
+
+    void emptyAlbum()
+    {
+        JOptionPane.showMessageDialog(null,
+                "Select photos to add to album first",
+                "Album is empty!",
                 JOptionPane.ERROR_MESSAGE);
     }
 }

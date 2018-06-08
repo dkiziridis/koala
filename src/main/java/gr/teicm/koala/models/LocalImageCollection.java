@@ -113,4 +113,15 @@ public class LocalImageCollection
         imageCollection.clear();
         currentIndex = -1;
     }
+
+    public void openAlbum()
+    {
+        IOServices io = new IOServices();
+        for (String image : io.readFromFile())
+        {
+            ImageIcon img = new ImageIcon(image);
+            img.setDescription(image);
+            imageCollection.add(img);
+        }
+    }
 }

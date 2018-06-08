@@ -1,49 +1,45 @@
 package gr.teicm.koala.services;
 
+import org.apache.commons.io.FilenameUtils;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.*;
 import java.nio.file.Path;
+import java.util.LinkedList;
 import java.util.List;
 
 public class IOServices
 {
 
-    //TODO BETTER?
-    public ImageIcon openImage()
+    public String saveFile()
     {
-        ImageIcon image = new ImageIcon();
+        String path = "";
         JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setCurrentDirectory(new File(System.getProperty("getUser.home")));
-        fileChooser.setDialogTitle("Select Image");
+        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home") + "/Desktop"));
+        fileChooser.setDialogTitle("Save Album");
+        fileChooser.setApproveButtonText("Save");
         fileChooser.setControlButtonsAreShown(true);
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Photos",
-                "jpg",
-                "gif",
-                "png",
-                "bmp");
-        fileChooser.addChoosableFileFilter(filter);
+
         int result = fileChooser.showOpenDialog(null);
         if (result == JFileChooser.APPROVE_OPTION)
         {
             File selectedFile = fileChooser.getSelectedFile();
-            String path = selectedFile.getAbsolutePath();
-            image = new ImageIcon(path); //TODO better
+            path = selectedFile.getAbsolutePath();
         } else if (result == JFileChooser.CANCEL_OPTION)
         {
             System.out.println("No Data");
         }
-        return image;
+        return path;
     }
 
     public Path openFolder()
     {
         File path;
         JFileChooser chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new File("getUser.home"));
+        chooser.setCurrentDirectory(new File("user.home"));
         chooser.setDialogTitle("Select Folder");
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         chooser.setAcceptAllFileFilterUsed(false);
@@ -51,33 +47,66 @@ public class IOServices
         if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
         {
             return chooser.getSelectedFile().toPath();
-        }
-        else
+        } else
         {
-            path = new File(System.getProperty("getUser.home"));
+            path = new File(System.getProperty("user.home"));
             return path.toPath();
         }
     }
 
-    public void printToFile(List<String> imagePaths)
+    public void saveImage(ImageIcon icon, String path) throws IOException
     {
-        try (BufferedWriter write = new BufferedWriter(new FileWriter(openFolder().toFile())))
-        {
-            for (String str : imagePaths)
-            {
-
-                write.write(str);
-                write.newLine();
-            }
-        } catch (IOException e)
-        {
-            new Message().accessDenied();
-            e.printStackTrace();
-        }
+        Image img = icon.getImage();
+        BufferedImage bi = new BufferedImage(img.getWidth(null), img.getHeight(null), BufferedImage.TYPE_INT_RGB);
+        Graphics2D g2 = bi.createGraphics();
+        g2.drawImage(img, 0, 0, null);
+        g2.dispose();
+        ImageIO.write(bi, FilenameUtils.getExtension(icon.getDescription()), new File(path + icon.getDescription()));
     }
 
-    public void ReadFromFile()
+    public void printToFile(List<String> imagePaths)
     {
-        File txt = new File("");
+        if (imagePaths.size() != 0)
+        {
+            try (BufferedWriter write = new BufferedWriter(new FileWriter(saveFile())))
+            {
+                for (String str : imagePaths)
+                {
+                    write.write(str);
+                    write.newLine();
+                }
+            } catch (IOException e)
+            {
+                new Message().accessDenied();
+                e.printStackTrace();
+            }
+        } else
+        {
+            new Message().emptyAlbum();
+        }
+
+    }
+
+    public List<String> readFromFile()
+    {
+        List<String> imagePaths = new LinkedList<>();
+        JFileChooser fChoose = new JFileChooser(System.getProperty("user.home"));
+        File file = fChoose.getSelectedFile();
+        int returnVal = fChoose.showOpenDialog(null);
+        if (returnVal == JFileChooser.APPROVE_OPTION)
+        {
+            try (BufferedReader br = new BufferedReader(new FileReader(file)))
+            {
+                String line;
+                while ((line = br.readLine()) != null)
+                {
+                    imagePaths.add(line);
+                }
+            } catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
+        return imagePaths;
     }
 }

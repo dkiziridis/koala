@@ -7,19 +7,41 @@ import org.xml.sax.SAXException;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.util.List;
 
 public class Sync
 {
+    PullImage pull = new PullImage();
     private LocalImageCollection localImageCollection;
 
-    public void sync() throws TikaException, IOException, SAXException
+    public void syncUp() throws TikaException, IOException, SAXException
     {
+
+        List<String> imagesUp = pull.fetchImageNames();
 
         for (ImageIcon image : localImageCollection.getImageCollection())
         {
-            new PushImage(new HibernateImage(), image.getDescription());
+            imagesUp.remove(image.getDescription());
         }
 
+        for (String image : imagesUp)
+        {
+            new PushImage(new HibernateImage(), image);
+        }
+    }
+
+    public void syncDown() throws IOException
+    {
+        String path;
+        List<String> imagesDown = pull.fetchImageNames();
+        for (ImageIcon image : localImageCollection.getImageCollection())
+        {
+
+            imagesDown.remove(image.getDescription());
+        }
+
+        path = new IOServices().openFolder().toString();
+        pull.downloadImages(imagesDown, path);
     }
 
     public void setLocalImageCollection(LocalImageCollection localImageCollection)

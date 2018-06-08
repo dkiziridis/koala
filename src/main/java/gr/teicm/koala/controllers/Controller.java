@@ -1,6 +1,6 @@
 package gr.teicm.koala.controllers;
 
-import gr.teicm.koala.models.HibernateImage;
+import gr.teicm.koala.models.Album;
 import gr.teicm.koala.models.LocalImageCollection;
 import gr.teicm.koala.services.*;
 import gr.teicm.koala.views.*;
@@ -21,14 +21,43 @@ public class Controller
     private LocalImageCollection collection;
     private KPanel kPanel;
     private KToolbar kToolbar = new KToolbar();
-    private HibernateImage[] hibernateImages;
     private List<String> imagePaths = new LinkedList<>();
-
+    KMenuBar kMenuBar = new KMenuBar();
 
     public Controller(LocalImageCollection collection, KPanel kPanel) throws IOException
     {
         this.collection = collection;
         this.kPanel = kPanel;
+
+        kMenuBar.setIkMenuBar(new IKMenuBar()
+        {
+            @Override
+            public void exitApp()
+            {
+                System.out.println("Bye, bye");
+                System.exit(0);
+
+            }
+
+            @Override
+            public void openAlbum()
+            {
+                collection.clear();
+                collection.openAlbum();
+            }
+
+            @Override
+            public void showAbout()
+            {
+                new MJGA();
+            }
+
+            @Override
+            public void changeBackground()
+            {
+
+            }
+        });
 
         kToolbar.setIKToolbar(new IKToolbar()
         {
@@ -37,6 +66,7 @@ public class Controller
             {
                 kPanel.getViewArea().removeAll();
                 kToolbar.hideOrShowButtons(true);
+                kToolbar.hideGalleryBtn(false);
                 initKPanel();
             }
 
@@ -44,6 +74,7 @@ public class Controller
             public void nextImage()
             {
                 kPanel.showImage(new KPhoto(collection.getImage(1)));
+                kToolbar.hideGalleryBtn(true);
                 kToolbar.hideOrShowButtons(false);
             }
 
@@ -51,6 +82,8 @@ public class Controller
             public void previousImage()
             {
                 kPanel.showImage(new KPhoto(collection.getImage(-1)));
+                kToolbar.hideGalleryBtn(true);
+
                 kToolbar.hideOrShowButtons(false);
             }
 
@@ -89,11 +122,11 @@ public class Controller
 
                 new KExif(metadata.getHeight(),
                         metadata.getWidth(),
-                        metadata.getCompressionType(),
-                        metadata.getLatitude(),
-                        metadata.getLongitude(),
+                        metadata.getImageName(),
+                        Double.toString(metadata.getLatitude()),
+                        Double.toString(metadata.getLongitude()),
                         metadata.getContentType(),
-                        metadata.getFileSize(),
+                        Long.toString(metadata.getFileSize()),
                         metadata.getDate()
                 );
             }
@@ -101,8 +134,7 @@ public class Controller
             @Override
             public void makeAlbum()
             {
-                IOServices io = new IOServices();
-                io.printToFile(imagePaths);
+                new Album(imagePaths);
             }
 
             @Override
@@ -110,7 +142,8 @@ public class Controller
             {
                 Sync sync = new Sync();
                 sync.setLocalImageCollection(collection);
-                sync.sync();
+                sync.syncUp();
+                sync.syncDown();
             }
         });
 
@@ -127,7 +160,7 @@ public class Controller
             }
         });
         initKPanel();
-        KMenuBar kMenuBar = new KMenuBar();
+        kToolbar.hideGalleryBtn(false);
         Koala koala = new Koala(kMenuBar, kPanel, kToolbar);
     }
 
@@ -146,6 +179,7 @@ public class Controller
                 {
                     super.mouseClicked(e);
                     kPanel.showImage(new KPhoto(collection.getImageByPath(image.getDescription())));
+
                     kToolbar.hideOrShowButtons(false);
                 }
 
@@ -185,11 +219,11 @@ public class Controller
 
                     new KExif(metadata.getHeight(),
                             metadata.getWidth(),
-                            metadata.getCompressionType(),
-                            metadata.getLatitude(),
-                            metadata.getLongitude(),
+                            metadata.getImageName(),
+                            Double.toString(metadata.getLatitude()),
+                            Double.toString(metadata.getLongitude()),
                             metadata.getContentType(),
-                            metadata.getFileSize(),
+                            Long.toString(metadata.getFileSize()),
                             metadata.getDate()
                     );
                 }

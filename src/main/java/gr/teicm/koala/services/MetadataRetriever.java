@@ -14,65 +14,22 @@ import java.io.IOException;
 
 public class MetadataRetriever
 {
-    private String latitude;
-    private String longitude;
+    private double latitude;
+    private double longitude;
     private String width;
     private String height;
     private String imageName;
     private String type;
     private String date;
-    private String fileSize;
+    private long fileSize;
 
-
-    public String getLatitude()
-    {
-        return latitude;
-    }
-
-    public String getLongitude()
-    {
-        return longitude;
-    }
-
-    public String getWidth()
-    {
-        return width;
-    }
-
-    public String getHeight()
-    {
-        return height;
-    }
-
-    public String getCompressionType()
-    {
-        return imageName;
-    }
-
-    public String getContentType()
-    {
-        return type;
-    }
-
-    public String getFileSize()
-    {
-        return fileSize;
-    }
-
-    public String getDate()
-    {
-
-        return date;
-    }
-
-    public String getImageName()
-    {
-        return imageName;
-    }
 
     public MetadataRetriever(String path) throws IOException, TikaException, SAXException
     {
         File file = new File(path);
+        imageName = file.getName();
+
+        fileSize = file.length();
 
         //Parser method parameters
         Parser parser = new AutoDetectParser();
@@ -90,9 +47,7 @@ public class MetadataRetriever
             switch (tag)
             {
                 case "File Name":
-                    imageName = metadata.get(tag);
                     break;
-
                 case "Image Height":
                     height = String.valueOf(metadata.get(tag));
                     break;
@@ -110,15 +65,14 @@ public class MetadataRetriever
                     break;
 
                 case "geo:lat":
-                    latitude = metadata.get(tag);
+                    latitude = Double.parseDouble(metadata.get(tag));
                     break;
 
                 case "geo:long":
-                    longitude = metadata.get(tag);
+                    longitude = Double.parseDouble(metadata.get(tag));
                     break;
 
                 case "File Size":
-                    fileSize = String.valueOf(metadata.get(tag));
                     break;
                 default:
                     break;
@@ -128,5 +82,46 @@ public class MetadataRetriever
 
         }
 
+    }
+
+    public double getLatitude()
+    {
+        return latitude;
+    }
+
+    public String getWidth()
+    {
+        return width;
+    }
+
+    public String getHeight()
+    {
+        return height;
+    }
+
+    public String getContentType()
+    {
+        return type;
+    }
+
+    public double getLongitude()
+    {
+        return longitude;
+    }
+
+    public String getDate()
+    {
+
+        return date;
+    }
+
+    public String getImageName()
+    {
+        return imageName;
+    }
+
+    public long getFileSize()
+    {
+        return fileSize;
     }
 }

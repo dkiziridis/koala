@@ -30,12 +30,12 @@ public class KToolbar extends JPanel
         setBorder(BorderFactory.createEtchedBorder());
         setLayout(new FlowLayout(FlowLayout.CENTER));
         previousImgBtn = new JButton(" < ");
-        setPathBtn = new JButton("Path");
+        setPathBtn = new JButton("Open");
         syncBtn = new JButton("Sync");
         exifDataBtn = new JButton("EXIF");
         nextImgBtn = new JButton(" > ");
         geolocateBtn = new JButton("Geolocate");
-        galleryBtn = new JButton("Gallery");
+        galleryBtn = new JButton("Back");
         printImgBtn = new JButton("Print");
         makeAlbumBtn = new JButton("Create Album");
 
@@ -130,6 +130,14 @@ public class KToolbar extends JPanel
     {
         setPathBtn.setVisible(bool);
         syncBtn.setVisible(bool);
+        setPathBtn.setVisible(bool);
+        makeAlbumBtn.setVisible(bool);
+
+    }
+
+    public void hideGalleryBtn(boolean bool)
+    {
+        galleryBtn.setVisible(bool);
 
     }
 

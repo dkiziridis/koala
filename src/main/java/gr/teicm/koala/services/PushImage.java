@@ -14,6 +14,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 public class PushImage
 {
@@ -21,7 +23,6 @@ public class PushImage
     {
         File imageFile = new File(pathToImage);
         Image image = ImageIO.read(imageFile);
-
 
         Session session = HibernateUtil.getSession();
         Transaction tx = session.beginTransaction();
@@ -31,8 +32,8 @@ public class PushImage
 
         MetadataRetriever metadataRetrieverService = new MetadataRetriever(pathToImage);
 
-        latitude = Double.parseDouble(metadataRetrieverService.getLatitude());
-        longitude = Double.parseDouble(metadataRetrieverService.getLongitude());
+        latitude = metadataRetrieverService.getLatitude();
+        longitude = metadataRetrieverService.getLongitude();
 
 
         hibernateImage.setUserId(Users.ROOT.getUser()); //Call User ENUM
@@ -46,7 +47,8 @@ public class PushImage
         hibernateImage.setLongitude(longitude);
         hibernateImage.setCameraBrand(null);
         hibernateImage.setCameraModel(null);
-        hibernateImage.setDate(Timestamp.valueOf(metadataRetrieverService.getDate()));
+        hibernateImage.setDate(Timestamp.valueOf(LocalDateTime.now(ZoneId.of("UTC"))));
+//        hibernateImage.setDate(Timestamp.valueOf(metadataRetrieverService.getDate()));
         hibernateImage.setMegapixels(null);
         hibernateImage.setDpi(null);
 

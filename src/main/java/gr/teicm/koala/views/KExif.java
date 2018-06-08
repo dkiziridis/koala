@@ -6,10 +6,9 @@ import java.awt.*;
 public class KExif extends JFrame
 {
 
-    // private JLabel userId;
     private JLabel jimageHeight;
     private JLabel jimageWidth;
-    private JLabel jcompressionType;
+    private JLabel jimageName;
     private JLabel jlatitude;
     private JLabel jlongitude;
     private JLabel jcontentType;
@@ -22,7 +21,7 @@ public class KExif extends JFrame
 
     public KExif(String imageHeight,
                  String imageWidth,
-                 String compressionType,
+                 String imageName,
                  String latitude,
                  String longitude,
                  String contentType,
@@ -31,22 +30,20 @@ public class KExif extends JFrame
     {
         layout = new GridLayout(7, 2);
 
-        //userId = new JLabel("User ID : ");
         jimageHeight = new JLabel("Height : " + imageHeight);
         jimageWidth = new JLabel("Width : " + imageWidth);
-        jcompressionType = new JLabel("Compression Type : " + compressionType);
+        jimageName = new JLabel("Image Name : " + imageName);
         jlatitude = new JLabel("Latitude : " + latitude);
         jlongitude = new JLabel("Longitude : " + longitude);
         jcontentType = new JLabel("ContentType : " + contentType);
-        jfileSize = new JLabel("File Size : " + fileSize);
+        jfileSize = new JLabel("File Size : " + fileSize + " bytes");
         jdate = new JLabel("File Modified Date : " + date);
 
 
         setLayout(layout);
-        //add(userId);
+        add(jimageName);
         add(jimageHeight);
         add(jimageWidth);
-        add(jcompressionType);
         add(jfileSize);
         add(jlatitude);
         add(jlongitude);
