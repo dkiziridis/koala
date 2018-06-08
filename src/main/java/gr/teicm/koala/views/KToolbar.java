@@ -85,6 +85,23 @@ public class KToolbar extends JPanel
             }
         });
 
+        exifDataBtn.addActionListener(e ->
+        {
+            try
+            {
+                IKToolbar.exifService();
+            } catch (TikaException e1)
+            {
+                e1.printStackTrace();
+            } catch (IOException e1)
+            {
+                e1.printStackTrace();
+            } catch (SAXException e1)
+            {
+                e1.printStackTrace();
+            }
+        });
+
 
 
         add(setPathBtn);

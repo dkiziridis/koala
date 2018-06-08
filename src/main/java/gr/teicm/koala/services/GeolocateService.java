@@ -15,8 +15,8 @@ public class GeolocateService
         double latitude;
 
         retrieverService = new MetadataRetrieverService(path);//key == path
-        longitude = retrieverService.getLongitude();
-        latitude = retrieverService.getLatitude();
+        longitude = Double.parseDouble(retrieverService.getLongitude());
+        latitude = Double.parseDouble(retrieverService.getLatitude());
 
         if (latitude > 0 & longitude > 0)
         {

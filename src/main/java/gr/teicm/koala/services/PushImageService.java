@@ -31,8 +31,8 @@ public class PushImageService
 
         MetadataRetrieverService metadataRetrieverService = new MetadataRetrieverService(pathToImage);
 
-        latitude = metadataRetrieverService.getLatitude();
-        longitude = metadataRetrieverService.getLongitude();
+        latitude = Double.parseDouble(metadataRetrieverService.getLatitude());
+        longitude = Double.parseDouble(metadataRetrieverService.getLongitude());
 
 
         hibernateImage.setUserId(Users.ROOT.getUser()); //Call User ENUM

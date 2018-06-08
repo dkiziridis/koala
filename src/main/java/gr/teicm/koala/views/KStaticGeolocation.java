@@ -60,7 +60,7 @@ public class KStaticGeolocation
 
         JLabel map = new JLabel((Icon) new ImageIcon("map.jpg")
                 .getImage()
-                .getScaledInstance(800, 600, Image.SCALE_SMOOTH));
+                .getScaledInstance(800, 800, Image.SCALE_SMOOTH));
 
         staticGeoLoc.add(map);
 

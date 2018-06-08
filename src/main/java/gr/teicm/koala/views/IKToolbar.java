@@ -9,10 +9,16 @@ import java.io.IOException;
 public interface IKToolbar
 {
     void showGallery() throws IOException;
+
     void nextImage();
+
     void previousImage();
+
     void geolocate() throws TikaException, IOException, SAXException;
+
     void openFolder() throws IOException;
 
     void printImage() throws IOException, PrintException;
+
+    void exifService() throws TikaException, IOException, SAXException;
 }

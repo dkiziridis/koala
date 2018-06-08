@@ -26,42 +26,44 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencies>
-    <!-- https://mvnrepository.com/artifact/net.coobird/thumbnailator -->
+
     <dependency>
       <groupId>net.coobird</groupId>
       <artifactId>thumbnailator</artifactId>
       <version>0.4.8</version>
     </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-      <dependency>
+
+    <dependency>
           <groupId>org.apache.tika</groupId>
-          <artifactId>tika-parser</artifactId>
+      <artifactId>tika-parsers</artifactId>
           <version>1.14</version>
       </dependency>
+
     <dependency>
       <groupId>org.apache.tika</groupId>
       <artifactId>tika-core</artifactId>
         <version>1.14</version>
     </dependency>
-    <!-- https://mvnrepo sitory.com/artifact/mysql/mysql-connector-java -->
+
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>5.1.6</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
       <version>5.2.12.Final</version>
     </dependency>
 
-      <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
       <dependency>
           <groupId>commons-io</groupId>
           <artifactId>commons-io</artifactId>

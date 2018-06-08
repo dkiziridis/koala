@@ -3,6 +3,7 @@ package gr.teicm.koala.controllers;
 import gr.teicm.koala.models.LocalImageCollection;
 import gr.teicm.koala.services.GeolocateService;
 import gr.teicm.koala.services.ImageManipulationService;
+import gr.teicm.koala.services.MetadataRetrieverService;
 import gr.teicm.koala.services.PrintImageService;
 import gr.teicm.koala.views.*;
 import org.apache.tika.exception.TikaException;
@@ -77,6 +78,22 @@ public class Controller
                 FileInputStream file;
                 file = new FileInputStream(collection.pathToImage());
                 new PrintImageService(file);
+            }
+
+            @Override
+            public void exifService() throws TikaException, IOException, SAXException
+            {
+                MetadataRetrieverService metadata = new MetadataRetrieverService(collection.pathToImage());
+
+                new KExif(metadata.getHeight(),
+                        metadata.getWidth(),
+                        metadata.getCompressionType(),
+                        metadata.getLatitude(),
+                        metadata.getLongitude(),
+                        metadata.getContentType(),
+                        metadata.getFileSize(),
+                        metadata.getDate());
+
             }
         });
 
